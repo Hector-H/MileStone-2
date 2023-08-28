@@ -5,7 +5,9 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 // Components
 import Home from './components/Home.js';
-import SearchBar from './components/SearchBar';
+import NavBar from './components/NavBar/NavBar';
+import SideBar from './components/SideBar/SideBar';
+import ProductWindow from './components/ProductWindow';
 
 
 function App() {
@@ -13,7 +15,9 @@ function App() {
     <div className="App">
       <Router>
         <Home />
-        <SearchBar />
+        <NavBar />
+        <SideBar />
+        <ProductWindow />
       </Router>
     </div>
   );
