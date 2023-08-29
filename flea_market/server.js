@@ -6,6 +6,7 @@ const path = require('path')
 
 // CONTROLLERS
 const ProductController = require('./controllers/Product_Controller.js')
+const ProfileController = require('./controllers/Profile_Controller.js')
 
 // CONFIGURATION / MIDDLEWARE
 require('dotenv').config()
@@ -13,6 +14,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 app.use(ProductController)
+app.use(ProfileController)
 
 // Root Route
 app.get('/', (req, res) => {
