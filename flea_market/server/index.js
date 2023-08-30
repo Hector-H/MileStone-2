@@ -1,91 +1,41 @@
-// DEPENDENCIES
-const express = require('express')
-const app = express();
-const cors = require('cors');
-const pool = require('./db');
-// const { Sequelize } = require('sequelize');
-// const path = require('path');
 
-// CONFIGURATION / MIDDLEWARE
-require('dotenv').config();
-app.use(cors());
-app.use(express.json());
-// app.use(express.urlencoded({ extended: false }));
+'use strict';
 
-//Routes//
+const fs = require('fs');
+const path = require('path');
+const Sequelize = require('sequelize');
+const process = require('process');
+const basename = path.basename(__filename);
+const env = process.env.NODE_ENV || 'development';
+const config = require(__dirname + '/../config/config.json')[env];
+const db = {};
 
 
 
-//create listing
+let sequelize;
+if (config.use_env_variable) {
+  sequelize = new Sequelize(process.env[config.use_env_variable], config);
+} else {
+  sequelize = new Sequelize(config.database, config.username, config.password, config);
+}
 
-app.post("/listings", async (req, res) => {
-    try {
-        const { description } = req.body;
-        const newListing = await pool.query(
-            "INSERT INTO listings (description) VALUES($1) RETURNING *",
-        [description]
-        );
-        res.json(newListing.rows[0])
-    } catch(err) {
-        console.error(err.message);
-    }
-})
+fs
+  .readdirSync(__dirname)
+  .filter(file => {
+    return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
+  })
+  .forEach(file => {
+    const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes);
+    db[model.name] = model;
+  });
 
-//get all listings
+Object.keys(db).forEach(modelName => {
+  if (db[modelName].associate) {
+    db[modelName].associate(db);
+  }
+});
 
-app.get("/listings", async(req, res) => {
-    try {
-        const allListings = await pool.query("SELECT * FROM listings");
-        res.json(allListings.rows);
-    } catch (err) {
-        console.log(err.message)
-    }
-})
+db.sequelize = sequelize;
+db.Sequelize = Sequelize;
 
-//get a listing
-
-app.get("/listings/:id", async (req, res) => {
-    try {
-        const { id } = req.params;
-        const listing = await pool.query("SELECT * FROM listings WHERE listing_id = $1", [id])
-
-        res.json(listing.rows[0])
-    } catch (error) {
-        console.error(error.message)
-    }
-})
-
-//update listing
-
-app.put("/listings/:id", async(req, res) =>{
-    try {
-        const { id } = req.params;
-        const { description } = req.body;
-        const updateListing = await pool.query(" UPDATE listings SET description = $1 WHERE listing_id = $2", 
-        [ description, id ]
-        );
-
-        res.json("Listings was updated")
-    } catch (err) {
-        console.error(err.message)
-    }
-})
-
-//delete listing
-
-app.delete("/listings/:id", async (req, res) => {
-    try {
-        const { id } = req.params;
-        const deleteListing = await pool.query(" DELETE FROM listings WHERE listing_id = $1", [
-            id]
-            );
-            res.json("listing deleted")
-    } catch (error) {
-        
-    }
-})
-
-// LISTEN
-app.listen(5000, () => {
-    console.log(`🎸 Rockin' on port: ${5000}`)
-})
+module.exports = db;
