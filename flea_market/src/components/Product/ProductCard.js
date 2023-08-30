@@ -1,17 +1,24 @@
-import productsSeed from "../SeedData/Product_Seed";
+import { Link } from "react-router-dom";
+
+import productsSeed from "../../SeedData/Product_Seed";
+import "./Products.css";
 
 export default function ProductCard() {
     return (
-        <div className="product">
+        <div className="productCard">
             <main>
                 {
                     productsSeed.map((product, index) => {
                         return (
                             <div key={index}>
-                                <h2>{product.name}</h2>
+                                <Link to={`/product/${product.name}`}>
+                                    <h2>{product.name}</h2>
+                                </Link>
                                 <h3>{product.price}</h3>
                                 <h3>{product.category}</h3>
-                                <img src={product.image} alt="product" />
+                                <Link to={`/product/${product.name}`}>
+                                    <img src={product.image} alt="product" />
+                                </Link>
                                 <p>{product.details}</p>
                                 <button>{product.checkOutButton}</button>
                                 <h3>Reviews</h3>
