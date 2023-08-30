@@ -1,14 +1,14 @@
 //Dependencies
-import Product from "./Product";
+import ProductCard from "./ProductCard";
 
 export default function ProductWindow() {
     return (
         <div className="ProductWindow">
         <h1>Product Window</h1>
-        <Product />
-        <Product />
-        <Product />
-        <Product />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
         </div>
     );
 }
