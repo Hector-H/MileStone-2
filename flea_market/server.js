@@ -1,8 +1,9 @@
 // DEPENDENCIES
-const express = require('express')
+const express = require('express');
 const app = express();
 const { Sequelize } = require('sequelize');
-const path = require('path')
+const path = require('path');
+const pool = require("./server/db");
 
 // CONTROLLERS
 const ProductController = require('./controllers/Product_Controller.js')
@@ -10,6 +11,7 @@ const ProfileController = require('./controllers/Profile_Controller.js')
 
 // CONFIGURATION / MIDDLEWARE
 require('dotenv').config()
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
@@ -35,6 +37,9 @@ app.get('*', (req, res) => {
         res.status(500).json({ message: 'Something went wrong', error: error.message })
     }
 })
+
+
+
 
 // LISTEN
 app.listen(process.env.PORT, () => {
