@@ -1,25 +1,27 @@
 // Dependencies
 import './App.css';
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 // Components
-import Home from './components/Home.js';
 import NavBar from './components/NavBar/NavBar';
 import SideBar from './components/SideBar/SideBar';
-import ProductWindow from './components/ProductWindow';
+import ProductWindow from './components/Product/ProductWindow';
 
 
 function App() {
   return (
-    <div className="App">
-      <Router>
-        <Home />
-        <NavBar />
-        <SideBar />
-        <ProductWindow />
-      </Router>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <header className="App-header">
+          <NavBar />
+        </header>
+        <main>
+          <SideBar />
+          <ProductWindow />
+        </main>
+      </div>
+    </BrowserRouter>
   );
 }
 
