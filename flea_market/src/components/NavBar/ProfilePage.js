@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-export default function ProfilePage() {
+export default function ProfilePage(props) {
     return (
         <div className="ProfilePage">
             <Link to="/profile">

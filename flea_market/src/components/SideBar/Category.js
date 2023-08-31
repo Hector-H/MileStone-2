@@ -1,7 +1,11 @@
-export default function Category() {
+import { Link } from "react-router-dom";
+
+export default function Category(props) {
     return (
         <div className="Category">
-        <h1>Category</h1>
+            <Link to="/category">
+                <h1>Category</h1>
+            </Link>
         </div>
     );
 }
