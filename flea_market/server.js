@@ -28,6 +28,14 @@ app.get('/', (req, res) => {
     }
 })
 
+// Product Routes
+const productsController = require('./controllers/Product_Controller.js')
+app.use('/products', productsController)
+
+// Profile Routes
+const profilesController = require('./controllers/Profile_Controller.js')
+app.use('/profiles', profilesController)
+
 // 404 Error Route
 app.get('*', (req, res) => {
     try {
@@ -37,9 +45,6 @@ app.get('*', (req, res) => {
         res.status(500).json({ message: 'Something went wrong', error: error.message })
     }
 })
-
-
-
 
 // LISTEN
 app.listen(process.env.PORT, () => {

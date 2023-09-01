@@ -16,6 +16,9 @@ products.get('/', async (req, res) => {
 products.get('/:id', async (req, res) => {
     try {
         res.json({message: 'Products Show'})
+        // Show products by id
+        const { id } = req.params;
+
     } catch (error) {
         console.log(error)
         res.status(500).json({ message: 'Something went wrong', error: error.message })
