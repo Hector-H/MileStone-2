@@ -1,9 +1,22 @@
-import { Link } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 import productsSeed from "../../SeedData/Product_Seed";
 import "./Products.css";
 
 export default function ProductCard(props) {
+
+    const [product, setProduct] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await fetch("http://localhost:3000/products");
+            setProduct(response.data);
+        };
+        fetchData();
+    }, []);
+
+
     return (
         <div className="productCard">
             <main>
