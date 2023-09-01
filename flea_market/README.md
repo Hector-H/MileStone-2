@@ -21,3 +21,5 @@ npm i --save-dev jest
 npm i express
 npm i init
 npm i cors
+npm i sequelize 
+npm i pg
