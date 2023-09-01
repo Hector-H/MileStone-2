@@ -1,11 +1,12 @@
 //Dependencies
 import { Routes, Route } from "react-router-dom";
-import { useState, useEffect } from "react";
 
 import ProductCard from "./ProductCard";
 import "./Products.css";
 
 export default function ProductWindow(props) {
+    // const [product, setProduct] = useState([]);
+
     return (
         <div className="ProductWindow">
             <Routes>

@@ -4,6 +4,7 @@ const app = express();
 const { Sequelize } = require('sequelize');
 const path = require('path');
 const pool = require("./server/db");
+const db = require('./server/models')
 
 // CONTROLLERS
 const ProductController = require('./controllers/Product_Controller.js')
@@ -47,7 +48,9 @@ app.get('*', (req, res) => {
 })
 
 // LISTEN
-app.listen(process.env.PORT, () => {
-    console.log(`🎸 Rockin' on port: ${process.env.PORT}`)
-    console.log(`http://localhost:${process.env.PORT}`)
+db.sequelize.sync().then(() => {
+    app.listen(process.env.PORT, () => {
+        console.log(`🎸 Rockin' on port: ${process.env.PORT}`)
+        console.log(`http://localhost:${process.env.PORT}`)
+    })
 })
