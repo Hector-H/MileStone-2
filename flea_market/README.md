@@ -20,3 +20,4 @@ npm i react-router-dom
 npm i --save-dev jest
 npm i express
 npm i init
+npm i cors
