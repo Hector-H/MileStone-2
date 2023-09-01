@@ -5,7 +5,7 @@ import ProfilePage from "./ProfilePage";
 import Cart from "./Cart";
 import "./NavBar.css";
 
-export default function NavBar() {
+export default function NavBar(props) {
     return (
         <div className="NavBar">
             <Link to="/">
