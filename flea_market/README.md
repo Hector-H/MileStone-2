@@ -18,3 +18,6 @@ The application should have a Readme.md file in the GitHub repository that descr
 NPMS Used
 npm i react-router-dom
 npm i --save-dev jest
+npm i express
+npm i init
+npm i cors

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import productsSeed from "../../SeedData/Product_Seed";
 import "./Products.css";
 
-export default function ProductCard() {
+export default function ProductCard(props) {
     return (
         <div className="productCard">
             <main>
