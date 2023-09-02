@@ -9,9 +9,26 @@ import { useEffect, useState } from 'react'
 import NavBar from './components/NavBar/NavBar';
 import SideBar from './components/SideBar/SideBar';
 import ProductWindow from './components/Product/ProductWindow';
+import productsSeed from "./SeedData/Product_Seed";
 
 
 function App() {
+const [products, setProducts] = useState([])
+	let [data, setData] = useState([])
+
+// Fetch products from productsSeed
+const FleaMarketAPI = () => {
+  fetch(productsSeed)
+    .then(res => res.json())
+    .then(json => {
+      setProducts(json)
+    })
+}
+
+useEffect(() => {
+  FleaMarketAPI()
+})
+
   return (
     <Router>
       <div className="App">
