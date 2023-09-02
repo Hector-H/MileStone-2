@@ -1,20 +1,23 @@
 //Dependencies
-import { Routes, Route } from "react-router-dom";
-
 import ProductCard from "./ProductCard";
 import "./Products.css";
 
 export default function ProductWindow(props) {
-    // const [product, setProduct] = useState([]);
-
+    const display = props.data.map((item,index) => {
+        return (
+            <ProductCard item={item} key={index} />
+        )
+    })
     return (
-        <div className="ProductWindow">
-            <Routes>
-                <Route path="/" element={<ProductCard />} />
-                <Route path="/" element={<ProductCard />} />
-                <Route path="/" element={<ProductCard />} />
-                <Route path="/" element={<ProductCard />} />
-            </Routes>
+        <div>
+            {display}
         </div>
-    );
+    )
 }
+
+{/* <Routes>
+    <Route path="/" element={<ProductCard />} />
+    <Route path="/" element={<ProductCard />} />
+    <Route path="/" element={<ProductCard />} />
+    <Route path="/" element={<ProductCard />} />
+</Routes> */}
