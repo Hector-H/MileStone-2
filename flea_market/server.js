@@ -4,7 +4,7 @@ const app = express();
 const { Sequelize } = require('sequelize');
 const path = require('path');
 const pool = require("./server/db");
-const cors = require("cors")
+const db = require('./server/models')
 
 // CONTROLLERS
 const ProductController = require('./server/controllers/Product_Controller.js')
@@ -30,6 +30,14 @@ app.get('/', (req, res) => {
     }
 })
 
+// Product Routes
+const productsController = require('./controllers/Product_Controller.js')
+app.use('/products', productsController)
+
+// Profile Routes
+const profilesController = require('./controllers/Profile_Controller.js')
+app.use('/profiles', profilesController)
+
 // 404 Error Route
 app.get('*', (req, res) => {
     try {
@@ -40,11 +48,10 @@ app.get('*', (req, res) => {
     }
 })
 
-
-
-
 // LISTEN
-app.listen(process.env.PORT, () => {
-    console.log(`🎸 Rockin' on port: ${process.env.PORT}`)
-    console.log(`http://localhost:${process.env.PORT}`)
+db.sequelize.sync().then(() => {
+    app.listen(process.env.PORT, () => {
+        console.log(`🎸 Rockin' on port: ${process.env.PORT}`)
+        console.log(`http://localhost:${process.env.PORT}`)
+    })
 })
