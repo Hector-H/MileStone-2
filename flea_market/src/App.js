@@ -1,9 +1,9 @@
 // Dependencies
 // import './App.css';
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react'
-// import { productsSeed } from './SeedData/Product_Seed.js';
+import productsSeed from './SeedData/Product_Seed.js';
 
 // Components
 import NavBar from './components/NavBar/NavBar';
@@ -16,11 +16,12 @@ import ProductForm from './components/Product/ProductForm';
 
 function App() {
 const [products, setProducts] = useState([])
-	let [data, setData] = useState([])
+const [seeds, setSeeds] = useState(productsSeed)
+let [data, setData] = useState([])
 
 // Fetch products from productsSeed
 const FleaMarketAPI = () => {
-  fetch('http://localhost:3000/products')
+  fetch('productsSeed')
     .then(res => res.json())
     .then(json => {
       setProducts(json)
@@ -32,8 +33,7 @@ useEffect(() => {
 })
 
   return (
-    <Router>
-      <div className="App">
+    <div className="App">
         <header className="App-header">
           <NavBar />
         </header>
@@ -51,14 +51,13 @@ useEffect(() => {
         </section>
         <main>
           <Routes>
-            <Route path="/" element={<ProductWindow />} />
+            <Route path="/" element={<ProductWindow seeds = {seeds} />} />
             <Route path="/products" element={<ProductList />} />
             <Route path="/products/create" element={<ProductForm />} />
             <Route path="/products/edit/:id" element={<ProductForm />} />
           </Routes>
         </main>
       </div>
-    </Router>
   );
 }
 

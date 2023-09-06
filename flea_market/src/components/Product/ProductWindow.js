@@ -2,15 +2,30 @@
 import ProductCard from "./ProductCard";
 import "./Products.css";
 
-export default function ProductWindow(props) {
-    const display = props.data.map((item,index) => {
-        return (
-            <ProductCard item={item} key={index} />
-        )
-    })
+export default function ProductWindow({ seeds }) {
+    // const display = props.map((item,index) => {
+    //     return (
+    //         <div>
+    //         <ProductCard item={item} key={index} />
+    //         </div>
+    //     )
+    // })
+
     return (
         <div>
-            {display}
+            {/* {display} */}
+            {seeds.map((seed) => {
+                const { id, name, price, image } = seed;
+                return (
+                    <article key={id}>
+                        <img src={image} alt={name} />
+                        <div>
+                            <h4>{name}</h4>
+                            <p>{price}</p>
+                        </div>
+                    </article>
+                )
+            })}
         </div>
     )
 }
