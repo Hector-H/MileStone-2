@@ -7,11 +7,13 @@ import { BrowserRouter } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import SideBar from './components/SideBar/SideBar';
 import ProductWindow from './components/Product/ProductWindow';
+import Home from './components/Home';
 
 
 function App() {
   return (
     <BrowserRouter>
+    <Home />
       <div className="App">
         <header className="App-header">
           <NavBar />

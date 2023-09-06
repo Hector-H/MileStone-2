@@ -23,3 +23,4 @@ npm i init
 npm i cors
 npm i sequelize 
 npm i pg
+npm install @supabase/supabase-js
