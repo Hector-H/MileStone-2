@@ -1,7 +1,7 @@
 // Dependencies
 import './App.css';
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Router, Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react'
 
 
@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react'
 import NavBar from './components/NavBar/NavBar';
 import SideBar from './components/SideBar/SideBar';
 import ProductWindow from './components/Product/ProductWindow';
-import productsSeed from "./SeedData/Product_Seed";
+import Home from './components/Home';
 
 
 function App() {
@@ -31,6 +31,7 @@ useEffect(() => {
 
   return (
     <Router>
+    <Home />
       <div className="App">
         <header className="App-header">
           <Routes>

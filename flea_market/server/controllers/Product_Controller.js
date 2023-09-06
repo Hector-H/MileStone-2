@@ -1,6 +1,8 @@
 //Dependencies
 const express = require('express');
 const products = require('express').Router();
+const pool = require("../db");
+
 
 //Index Route
 products.get('/', async (req, res) => {
@@ -27,7 +29,13 @@ products.get('/:id', async (req, res) => {
 // Create a product
 products.post('/', async (req, res) => {
     try {
-        res.json({message: 'Products Create'})
+        const { description } = req.body;
+        const newProduct = await pool.query(
+            "INSERT INTO products (description) VALUES($1)", 
+            [description] 
+            );
+
+            res.json(newProduct);
     } catch (error) {
         console.log(error)
         res.status(500).json({ message: 'Something went wrong', error: error.message })

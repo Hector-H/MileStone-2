@@ -4,11 +4,12 @@ const app = express();
 const { Sequelize } = require('sequelize');
 const path = require('path');
 const pool = require("./server/db");
-const db = require('./server/models')
+const cors = require("cors")
 
 // CONTROLLERS
-const ProductController = require('./controllers/Product_Controller.js')
-const ProfileController = require('./controllers/Profile_Controller.js')
+const ProductController = require('./server/controllers/Product_Controller.js')
+const ProfileController = require('./server/controllers/Profile_Controller.js')
+
 
 // CONFIGURATION / MIDDLEWARE
 require('dotenv').config()
