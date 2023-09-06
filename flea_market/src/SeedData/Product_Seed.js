@@ -1,3 +1,4 @@
+
 const productsSeed = [
     {
         name: "Product-1",

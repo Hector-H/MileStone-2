@@ -3,8 +3,8 @@ const express = require('express');
 const app = express();
 const { Sequelize } = require('sequelize');
 const path = require('path');
-const pool = require("./server/db");
-const db = require('./server/models')
+const db = require('./src/supabaseClient.js')
+
 
 // CONTROLLERS
 const ProductController = require('./server/controllers/Product_Controller.js')
@@ -41,7 +41,7 @@ app.use('/profiles', profilesController)
 // 404 Error Route
 app.get('*', (req, res) => {
     try {
-        res.status(404).send({message: 'Page not found!'})
+        res.status(404).send({ message: 'Page not found!' })
     } catch (error) {
         console.log(error)
         res.status(500).json({ message: 'Something went wrong', error: error.message })
@@ -49,9 +49,8 @@ app.get('*', (req, res) => {
 })
 
 // LISTEN
-db.sequelize.sync().then(() => {
-    app.listen(process.env.PORT, () => {
-        console.log(`🎸 Rockin' on port: ${process.env.PORT}`)
-        console.log(`http://localhost:${process.env.PORT}`)
-    })
+
+app.listen(process.env.PORT, () => {
+    console.log(`🎸 Rockin' on port: ${process.env.PORT}`)
+    console.log(`http://localhost:${process.env.PORT}`)
 })
