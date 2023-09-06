@@ -4,7 +4,7 @@ const app = express();
 const { Sequelize } = require('sequelize');
 const path = require('path');
 const pool = require("./server/db");
-const cors = require("cors")
+const db = require('./server/models')
 
 // CONTROLLERS
 const ProductController = require('./server/controllers/Product_Controller.js')

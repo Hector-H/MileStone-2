@@ -1,6 +1,7 @@
 import supabase from "../supabaseClient";
 import { useEffect, useState } from "react";
 
+import ProductCard from "./Product/ProductCard";
 
 const Home = () => {
     const [fetchError, setFetchError] = useState(null)
@@ -27,13 +28,13 @@ const Home = () => {
     }, [])
 
     return (
-        <div className="page home">
+        <div className="page-home">
             <h2>Home</h2>
             {fetchError && (<p>{fetchError}</p>)}
             {products && (
                 <div className="products">
                     {products.map(products => (
-                        <p>{products.title}</p>
+                        <ProductCard key={product_id} product={product} />
                     ))}
                 </div>
             )}
