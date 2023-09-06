@@ -1,16 +1,17 @@
 // Dependencies
 // import './App.css';
 import React from 'react';
-import { Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react'
-// import { productsSeed } from './productsSeed'
-
+// import { productsSeed } from './SeedData/Product_Seed.js';
 
 // Components
 import NavBar from './components/NavBar/NavBar';
 import SideBar from './components/SideBar/SideBar';
 import ProductWindow from './components/Product/ProductWindow';
 import Home from './components/Home';
+import ProductList from './components/Product/ProductList';
+import ProductForm from './components/Product/ProductForm';
 
 
 function App() {
@@ -32,26 +33,29 @@ useEffect(() => {
 
   return (
     <Router>
-    <Home />
       <div className="App">
         <header className="App-header">
-          <Routes>
-            <Route path="/" element={<NavBar />} />
-            <Route path="/product/:name" element={<NavBar />} />
-          </Routes>
+          <NavBar />
         </header>
         <section>
+          <nav>
+            <ul>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/products">Products</Link></li>
+            </ul>
+          </nav>
           <Routes>
             <Route path="/" element={<SideBar />} />
-            <Route path="/product/:name" element={<SideBar />} />
+            <Route path="/products" element={<SideBar />} />
           </Routes>
         </section>
         <main>
           <Routes>
             <Route path="/" element={<ProductWindow />} />
-            <Route path="/product/:name" element={<ProductWindow />} />
+            <Route path="/products" element={<ProductList />} />
+            <Route path="/products/create" element={<ProductForm />} />
+            <Route path="/products/edit/:id" element={<ProductForm />} />
           </Routes>
-          <ProductWindow />
         </main>
       </div>
     </Router>
