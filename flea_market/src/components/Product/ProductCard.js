@@ -7,14 +7,14 @@ export default function ProductCard({product}, index) {
         <div className="productCard">
             <main>
                             <div key={index}>
-                                <Link to={`/product/${product.title}`}>
+                                {/* <Link to={`/product/${product.title}`}> */}
                                     <h2>{product.title}</h2>
-                                </Link>
+                                {/* </Link> */}
                                 <h3>{product.price}</h3>
                                 <h3>{product.category}</h3>
-                                <Link to={`/product/${product.title}`}>
+                                {/* <Link to={`/product/${product.title}`}> */}
                                     <img src={product.image} alt="product" />
-                                </Link>
+                                {/* </Link> */}
                                 <p>{product.details}</p>
                                 <button>{product.checkOutButton}</button>
                                 <h3>Reviews</h3>
