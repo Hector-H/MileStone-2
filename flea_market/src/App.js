@@ -11,7 +11,9 @@ import SideBar from './components/SideBar/SideBar';
 import ProductWindow from './components/Product/ProductWindow';
 import Home from './components/Home';
 import ProductList from './components/Product/ProductList';
-import ProductForm from './components/Product/ProductForm';
+import ProductCreate from './components/Product/ProductCreate.js';
+import AboutUs from './components/SideBar/AboutUs';
+import ProductEdit from './components/Product/ProductEdit.js';
 
 
 function App() {
@@ -42,19 +44,22 @@ useEffect(() => {
             <ul>
               <li><Link to="/">Home</Link></li>
               <li><Link to="/products">Products</Link></li>
+              <li><Link to="/products/create">Create Product</Link></li>
+              <li><Link to="/products/edit">Edit Product</Link></li>
             </ul>
-          </nav>
           <Routes>
             <Route path="/" element={<SideBar />} />
             <Route path="/products" element={<SideBar />} />
           </Routes>
+          </nav>
         </section>
         <main>
           <Routes>
             <Route path="/" element={<ProductWindow seeds = {seeds} />} />
             <Route path="/products" element={<ProductList />} />
-            <Route path="/products/create" element={<ProductForm />} />
-            <Route path="/products/edit/:id" element={<ProductForm />} />
+            <Route path="/products/create" element={<ProductCreate />} />
+            <Route path="/products/edit/:id" element={<ProductEdit />} />
+            <Route path="/AboutUs" element={<AboutUs />} />
           </Routes>
         </main>
       </div>
