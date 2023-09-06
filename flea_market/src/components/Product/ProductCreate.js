@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-function ProductForm() {
+export default function ProductCreate() {
     const { id } = useParams();
     const [product, setProduct] = useState({
         // Initialize the product from product seed data
@@ -52,4 +52,3 @@ function ProductForm() {
     );
 }
 
-export default ProductForm;
