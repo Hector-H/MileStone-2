@@ -30,14 +30,10 @@ const Home = () => {
     return (
         <div className="page-home">
             <h2>Home</h2>
-            {fetchError && (<p>{fetchError}</p>)}
-            {products && (
-                <div className="products">
-                    {products.map(products => (
-                        <ProductCard key={product_id} product={product} />
-                    ))}
-                </div>
-            )}
+            {fetchError && <p>{fetchError}</p>}
+            {products && products.map((product, index) => {
+                return <ProductCard product={product} key={index} />
+            })}
         </div>
     )
 }

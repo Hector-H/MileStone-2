@@ -1,8 +1,9 @@
 // Dependencies
-import './App.css';
+// import './App.css';
 import React from 'react';
 import { Router, Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react'
+// import { productsSeed } from './productsSeed'
 
 
 // Components
@@ -18,7 +19,7 @@ const [products, setProducts] = useState([])
 
 // Fetch products from productsSeed
 const FleaMarketAPI = () => {
-  fetch(productsSeed)
+  fetch('http://localhost:3000/products')
     .then(res => res.json())
     .then(json => {
       setProducts(json)
