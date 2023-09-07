@@ -2,8 +2,8 @@
 // import './App.css';
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
-// import { useEffect, useState } from 'react'
-// import productsSeed from './SeedData/Product_Seed.js';
+import { useEffect, useState } from 'react'
+import productsSeed from './SeedData/Product_Seed.js';
 
 // Components
 import NavBar from './components/NavBar/NavBar';
