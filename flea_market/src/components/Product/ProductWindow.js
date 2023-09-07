@@ -1,6 +1,7 @@
 //Dependencies
 import { useEffect, useState } from 'react'
 import supabase from '../../supabaseClient'
+import ProductCard from './ProductCard';
 
 import "./Products.css";
 
@@ -36,7 +37,8 @@ export default function ProductWindow({ seeds }) {
             {products && (
                 <div className='products'>
                     {products.map(product => (
-                        <p> {product.title}</p>
+                        <ProductCard key={product.id} product={product}/>
+
                     ))}
                 </div>
             )}
