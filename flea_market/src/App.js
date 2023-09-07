@@ -24,19 +24,6 @@ import ProfilePage from './components/NavBar/ProfilePage.js';
 function App() {
 const [seeds, setSeeds] = useState(productsSeed)
 
-// Fetch products from productsSeed
-// const FleaMarketAPI = () => {
-//   fetch('productsSeed')
-//     .then(res => res.json())
-//     .then(json => {
-//       setProducts(json)
-//     })
-// }
-
-// useEffect(() => {
-//   FleaMarketAPI()
-// })
-
   return (
     <div className="App">
         <header className="App-header">

@@ -1,54 +1,61 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 
 export default function ProductCreate() {
-    const { id } = useParams();
-    const [product, setProduct] = useState({
-        // Initialize the product from product seed data
-        name: '',
-        description: '',
-        price: 0,
-    });
-
-    useEffect(() => {
-        if (id) {
-            // Fetch the product from the API
-            // Update the product state with the fetched product
-
-        }
-    }, [id]);
-
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setProduct({ ...product, [name]: value });
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-    };
-
     return (
         <div>
-            <h2>{id ? 'Edit Product' : 'Create Product'}</h2>
-            <form onSubmit={handleSubmit}>
+            <h2>List A Product</h2>
+            {/* Add a form to create a product */}
+            <form action="/products" method="POST">
                 <div>
-                    <label>Name:</label>
-                    <input type="text" name="name" value={product.name} onChange={handleInputChange} />
+                    <label htmlFor="title">Title:</label>
+                    <input 
+                    type="text" 
+                    name="title"
+                    id="title"
+                    placeholder="Enter Product Title"
+                    required
+                    />
                 </div>
                 <div>
-                    <label>Description:</label>
-                    <textarea name="description" value={product.description} onChange={handleInputChange} />
+                    <label htmlFor="details">Details:</label>
+                    <input
+                    type="text"
+                    name="details"
+                    id="details"
+                    placeholder="Enter Product Details"
+                    />
                 </div>
                 <div>
-                    <label>Price:</label>
-                    <input type="number" name="price" value={product.price} onChange={handleInputChange} />
+                    <label htmlFor="price">Price:</label>
+                    <input
+                    type="number"
+                    name="price"
+                    id="price"
+                    placeholder="Enter Product Price"
+                    />
                 </div>
-                {/* Add other input fields for product details */}
                 <div>
-                    <button type="submit">{id ? 'Update' : 'Create'}</button>
+                    <label htmlFor="category">Category:</label>
+                    <input
+                    type="text"
+                    name="category"
+                    id="category"
+                    placeholder="Enter Product Category"
+                    />
+                </div>
+                <div>
+                    <label htmlFor="image">Image:</label>
+                    <input
+                    type="text"
+                    name="image"
+                    id="image"
+                    placeholder="Enter Product Image"
+                    required
+                    />
+                </div>
+                <div>
+                    <button type="submit">Create</button>
                 </div>
             </form>
         </div>
     );
 }
-
