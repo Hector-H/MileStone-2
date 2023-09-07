@@ -17,22 +17,20 @@ import ProductEdit from './components/Product/ProductEdit.js';
 
 
 function App() {
-const [products, setProducts] = useState([])
 const [seeds, setSeeds] = useState(productsSeed)
-let [data, setData] = useState([])
 
 // Fetch products from productsSeed
-const FleaMarketAPI = () => {
-  fetch('productsSeed')
-    .then(res => res.json())
-    .then(json => {
-      setProducts(json)
-    })
-}
+// const FleaMarketAPI = () => {
+//   fetch('productsSeed')
+//     .then(res => res.json())
+//     .then(json => {
+//       setProducts(json)
+//     })
+// }
 
-useEffect(() => {
-  FleaMarketAPI()
-})
+// useEffect(() => {
+//   FleaMarketAPI()
+// })
 
   return (
     <div className="App">
