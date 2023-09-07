@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import supabase from '../../supabaseClient'
+import ProductCard from './ProductCard'
 
 import "./Products.css";
 
@@ -37,10 +38,8 @@ export default function ProductWindow({ seeds }) {
             {products && (
                 <div className='products'>
                     {products.map(product => (
-
                         <>
                             <ProductCard key={product.id} product={product}/>
-      
                         </>
                     ))}
                 </div>

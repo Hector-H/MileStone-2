@@ -19,46 +19,46 @@ import Distance from './components/SideBar/Distance.js';
 import Category from './components/SideBar/Category.js';
 import Cart from './components/NavBar/Cart.js';
 import ProfilePage from './components/NavBar/ProfilePage.js';
-import ProductbyId from './components/Product/ProductbyId.js';
+import ProductById from './components/Product/ProductById.js';
 
 function App() {
-const [seeds, setSeeds] = useState(productsSeed)
+  const [seeds, setSeeds] = useState(productsSeed)
 
   return (
     <div className="App">
-        <header className="App-header">
-          <NavBar />
-        </header>
-        <section>
-          <nav>
-            <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/products">Products</Link></li>
-              <li><Link to="/products/create">Create Product</Link></li>
-              <li><Link to="/products/edit">Edit Product</Link></li>
-            </ul>
+      <header className="App-header">
+        <NavBar />
+      </header>
+      <section>
+        <nav>
+          <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/products">Products</Link></li>
+            <li><Link to="/products/create">Create Product</Link></li>
+            <li><Link to="/products/edit">Edit Product</Link></li>
+          </ul>
           <Routes>
             <Route path="/" element={<SideBar />} />
             <Route path="/products" element={<SideBar />} />
           </Routes>
-          </nav>
-        </section>
-        <main>
-          <Routes>
-            <Route path="/" element={<ProductWindow seeds = {seeds} />} />
-            <Route path="/products/create" element={<ProductCreate />} />
-            <Route path="/products/edit" element={<ProductEdit />} />
-            <Route path="/AboutUs" element={<AboutUs />} />
-            <Route path="/ContactUs" element={<ContactUs />} />
-            <Route path="/HelpPage" element={<HelpPage />} />
-            <Route path="/Distance" element={<Distance />} />
-            <Route path="/Category" element={<Category />} />
-            <Route path="/Cart" element={<Cart />} />
-            <Route path="/ProfilePage" element={<ProfilePage />} />
-            <Route path="/products/:id" element={<ProductbyId />} />
-          </Routes>
-        </main>
-      </div>
+        </nav>
+      </section>
+      <main>
+        <Routes>
+          <Route path="/" element={<ProductWindow seeds={seeds} />} />
+          <Route path="/products/create" element={<ProductCreate />} />
+          <Route path="/products/edit" element={<ProductEdit />} />
+          <Route path="/AboutUs" element={<AboutUs />} />
+          <Route path="/ContactUs" element={<ContactUs />} />
+          <Route path="/HelpPage" element={<HelpPage />} />
+          <Route path="/Distance" element={<Distance />} />
+          <Route path="/Category" element={<Category />} />
+          <Route path="/Cart" element={<Cart />} />
+          <Route path="/ProfilePage" element={<ProfilePage />} />
+          <Route path="/products/:id" element={<ProductById />} />
+        </Routes>
+      </main>
+    </div>
   );
 }
 
