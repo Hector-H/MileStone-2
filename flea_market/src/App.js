@@ -10,7 +10,6 @@ import NavBar from './components/NavBar/NavBar';
 import SideBar from './components/SideBar/SideBar';
 import ProductWindow from './components/Product/ProductWindow';
 import Home from './components/Home';
-import ProductList from './components/Product/ProductList';
 import ProductCreate from './components/Product/ProductCreate.js';
 import ProductEdit from './components/Product/ProductEdit.js';
 import AboutUs from './components/SideBar/AboutUs';
@@ -46,7 +45,6 @@ const [seeds, setSeeds] = useState(productsSeed)
         <main>
           <Routes>
             <Route path="/" element={<ProductWindow seeds = {seeds} />} />
-            <Route path="/products" element={<ProductList />} />
             <Route path="/products/create" element={<ProductCreate />} />
             <Route path="/products/edit/:id" element={<ProductEdit />} />
             <Route path="/AboutUs" element={<AboutUs />} />
