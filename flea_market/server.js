@@ -5,8 +5,8 @@ const { Sequelize } = require('sequelize');
 
 
 // CONTROLLERS
-const ProductController = require('../server/controllers/Product_Controller.js')
-const ProfileController = require('../server/controllers/Profile_Controller.js')
+const ProductController = require('./server/controllers/Product_Controller.js')
+const ProfileController = require('./server/controllers/Profile_Controller.js')
 
 
 // CONFIGURATION / MIDDLEWARE
