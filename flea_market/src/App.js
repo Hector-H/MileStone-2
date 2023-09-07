@@ -12,12 +12,14 @@ import ProductWindow from './components/Product/ProductWindow';
 import Home from './components/Home';
 import ProductList from './components/Product/ProductList';
 import ProductCreate from './components/Product/ProductCreate.js';
-import AboutUs from './components/SideBar/AboutUs';
 import ProductEdit from './components/Product/ProductEdit.js';
+import AboutUs from './components/SideBar/AboutUs';
 import ContactUs from './components/SideBar/ContactUs.js';
 import HelpPage from './components/SideBar/HelpPage.js';
 import Distance from './components/SideBar/Distance.js';
 import Category from './components/SideBar/Category.js';
+import Cart from './components/NavBar/Cart.js';
+import ProfilePage from './components/NavBar/ProfilePage.js';
 
 function App() {
 const [seeds, setSeeds] = useState(productsSeed)
@@ -65,6 +67,8 @@ const [seeds, setSeeds] = useState(productsSeed)
             <Route path="/HelpPage" element={<HelpPage />} />
             <Route path="/Distance" element={<Distance />} />
             <Route path="/Category" element={<Category />} />
+            <Route path="/Cart" element={<Cart />} />
+            <Route path="/ProfilePage" element={<ProfilePage />} />
           </Routes>
         </main>
       </div>
