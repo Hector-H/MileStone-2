@@ -36,36 +36,10 @@ export default function ProductWindow({ seeds }) {
             {products && (
                 <div className='products'>
                     {products.map(product => (
-                        <>
-                        <h2>{product.title}</h2>
-                        <img src={product.image} alt="product" />
-                        
-                        <h3>{product.details}</h3>
-                        <h3>{product.dateposted}</h3>
-                        <h3>${product.price}</h3>
-                        <h3>{product.category}</h3>
-                        <h3>{product.reviews}</h3>
-                        
-                        <button>{product.checkOutButton}</button>
-                    </>
+                        <p> {product.title}</p>
                     ))}
                 </div>
             )}
         </div>
     )
 }
-
-{/* <div>
-{seeds.map((seed) => {
-    const { id, name, price, image } = seed;
-    return (
-        <article key={id}>
-            <img src={image} alt={name} />
-            <div>
-                <h4>{name}</h4>
-                <p>{price}</p>
-            </div>
-        </article>
-    )
-})}
-</div> */}
