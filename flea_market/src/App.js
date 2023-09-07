@@ -19,6 +19,7 @@ import Distance from './components/SideBar/Distance.js';
 import Category from './components/SideBar/Category.js';
 import Cart from './components/NavBar/Cart.js';
 import ProfilePage from './components/NavBar/ProfilePage.js';
+import ProductbyId from './components/Product/ProductbyId.js';
 
 function App() {
 const [seeds, setSeeds] = useState(productsSeed)
@@ -46,7 +47,7 @@ const [seeds, setSeeds] = useState(productsSeed)
           <Routes>
             <Route path="/" element={<ProductWindow seeds = {seeds} />} />
             <Route path="/products/create" element={<ProductCreate />} />
-            <Route path="/products/edit/:id" element={<ProductEdit />} />
+            <Route path="/products/edit" element={<ProductEdit />} />
             <Route path="/AboutUs" element={<AboutUs />} />
             <Route path="/ContactUs" element={<ContactUs />} />
             <Route path="/HelpPage" element={<HelpPage />} />
@@ -54,6 +55,7 @@ const [seeds, setSeeds] = useState(productsSeed)
             <Route path="/Category" element={<Category />} />
             <Route path="/Cart" element={<Cart />} />
             <Route path="/ProfilePage" element={<ProfilePage />} />
+            <Route path="/products/:id" element={<ProductbyId />} />
           </Routes>
         </main>
       </div>

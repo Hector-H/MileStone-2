@@ -1,4 +1,3 @@
-
 export default function ProductCreate() {
     return (
         <div>
@@ -48,6 +47,7 @@ export default function ProductCreate() {
                     type="text"
                     name="image"
                     id="image"
+                    pattern="^(https?:\/\/)?[^\s/$.?#].[^\s]*\.(jpg|jpeg|gif|png|bmp)$"
                     placeholder="Enter Product Image"
                     required
                     />
