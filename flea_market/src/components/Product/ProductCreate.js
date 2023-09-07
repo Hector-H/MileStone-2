@@ -1,8 +1,12 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import supabase from '../../supabaseClient'
 
 
+
 export default function ProductCreate() {
+
+    const navigate = useNavigate()
     const [title, setTitle] = useState('')
     const [details, setDetails] = useState('')
     const [price, setPrice] = useState('')
@@ -17,10 +21,11 @@ export default function ProductCreate() {
             setFormError('Fill Required Fields')
             return 
         }
-        
+        // console.log(title, details, price, category, image)
         const { data, error} = await supabase
         .from('products')
-        .insert([ { title, details, price, category, image}])
+        .insert([{ title, details, price, category, image}])
+        .select()
 
         if (error) {
             console.log(error)
@@ -29,6 +34,7 @@ export default function ProductCreate() {
         if (data) {
             console.log(data)
             setFormError(null)
+            navigate('/')
         }
     }
 
@@ -37,7 +43,7 @@ export default function ProductCreate() {
             <h2>List A Product</h2>
             {/* Add a form to create a product */}
             <form onSubmit={handleSubmit}>
-                <div>
+                
                     <label htmlFor="title">Title:</label>
                     <input 
                     type="text" 
@@ -48,8 +54,8 @@ export default function ProductCreate() {
                     placeholder="Enter Product Title"
                     required
                     />
-                </div>
-                <div>
+                
+                
                     <label htmlFor="details">Details:</label>
                     <textarea
                     type="text"
@@ -59,8 +65,8 @@ export default function ProductCreate() {
                     onChange={(e) => setDetails(e.target.value)}
                     placeholder="Enter Product Details"
                     />
-                </div>
-                <div>
+                
+                
                     <label htmlFor="price">Price:</label>
                     <input
                     type="number"
@@ -70,8 +76,8 @@ export default function ProductCreate() {
                     onChange={(e) => setPrice(e.target.value)}
                     placeholder="Enter Product Price"
                     />
-                </div>
-                <div>
+                
+                
                     <label htmlFor="category">Category:</label>
                     <input
                     type="text"
@@ -81,8 +87,8 @@ export default function ProductCreate() {
                     onChange={(e) => setCategory(e.target.value)}
                     placeholder="Enter Product Category"
                     />
-                </div>
-                <div>
+                
+                
                     <label htmlFor="image">Image:</label>
                     <input
                     type="text"
@@ -94,12 +100,11 @@ export default function ProductCreate() {
                     placeholder="Enter Product Image"
                     required
                     />
-                </div>
-                <div>
-                    <button type="submit">Create Product Listing</button>
-                </div>
+                
+                    <button>Create Product Listing</button>
+            
                 {formError && <p className='error'>{formError}</p>}
             </form>
         </div>
-    );
+    )
 }
