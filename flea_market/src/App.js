@@ -2,14 +2,13 @@
 // import './App.css';
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
-import { useEffect, useState } from 'react'
-import productsSeed from './SeedData/Product_Seed.js';
+// import { useEffect, useState } from 'react'
+// import productsSeed from './SeedData/Product_Seed.js';
 
 // Components
 import NavBar from './components/NavBar/NavBar';
 import SideBar from './components/SideBar/SideBar';
 import ProductWindow from './components/Product/ProductWindow';
-import Home from './components/Home';
 import ProductCreate from './components/Product/ProductCreate.js';
 import ProductEdit from './components/Product/ProductEdit.js';
 import AboutUs from './components/SideBar/AboutUs';
@@ -22,7 +21,7 @@ import ProfilePage from './components/NavBar/ProfilePage.js';
 import ProductbyId from './components/Product/ProductbyId.js';
 
 function App() {
-const [seeds, setSeeds] = useState(productsSeed)
+// const [seeds, setSeeds] = useState(productsSeed)
 
   return (
     <div className="App">
@@ -45,7 +44,7 @@ const [seeds, setSeeds] = useState(productsSeed)
         </section>
         <main>
           <Routes>
-            <Route path="/" element={<ProductWindow seeds = {seeds} />} />
+            <Route path="/" element={<ProductWindow  />} />
             <Route path="/products/create" element={<ProductCreate />} />
             <Route path="/products/edit" element={<ProductEdit />} />
             <Route path="/AboutUs" element={<AboutUs />} />

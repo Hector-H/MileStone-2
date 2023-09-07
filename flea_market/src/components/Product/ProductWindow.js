@@ -40,7 +40,6 @@ export default function ProductWindow({ seeds }) {
                     {products.map(product => (
                         <>
                             <ProductCard key={product.id} product={product}/>
-      
                         </>
                     ))}
                 </div>
