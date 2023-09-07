@@ -41,17 +41,17 @@ export default function ProductWindow({ seeds }) {
                             <Link to={`/products/${product.id}`}>
                                 <h2>{product.title}</h2>
                             </Link>
-                                <h3>{product.details}</h3>
-                                <h3>{product.dateposted}</h3>
-                                <h3>${product.price}</h3>
-                                <h3>{product.category}</h3>
-                                <h3>{product.reviews}</h3>
-                                <img src={product.image} alt="product" />
-                                <button>{product.checkOutButton}</button>
-                            </>
+                            <h3>{product.details}</h3>
+                            <h3>{product.dateposted}</h3>
+                            <h3>${product.price}</h3>
+                            <h3>{product.category}</h3>
+                            <h3>{product.reviews}</h3>
+                            <img src={product.image} alt="product" />
+                            <button>{product.checkOutButton}</button>
+                        </>
                     ))}
-                        </div >
-            )}
                 </div>
-            )
-            }
+            )}
+        </div>
+    )
+}
