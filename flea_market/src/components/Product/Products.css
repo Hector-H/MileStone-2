@@ -1,13 +1,11 @@
 .productCard {
-    display: grid;
-    grid-template-columns: repeat(3);
-    gap: 10;
-    grid-auto-rows: minmax(200px, auto);
-  
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: right;
     width: 250px;
     height: 350px;
-    margin: 10px;
+    margin: 100px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -15,29 +13,37 @@
     background-color: #fff;
     color: #000;
     text-decoration: none;
-    image-rendering: auto;
-    size: 100px;
-    
-    
+    transition: all 0.3s ease-in-out;
+    box-sizing: content-box;
+    text-align: center;
+    max-block-size: 50px;
+    image-rendering: crisp-edges;
 }
 
 .ProductWindow {
     display: flex;
-    grid-template-columns: repeat(3);
-    gap: 10;
-    grid-auto-rows: minmax(200px, auto);
-   
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: right;
     width: 250px;
     height: 350px;
-    margin: 10px;
+    margin: 100px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 20px solid #44a2a8;
     border-radius: 5px;
     box-shadow: 0 0 10px #ccc;
     background-color: #fff;
     color: #000;
     text-decoration: none;
-    
+    transition: all 0.3s ease-in-out;
 }
 
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    align-content: center;
+  }

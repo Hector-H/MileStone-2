@@ -35,9 +35,8 @@ const ProductCard = ({ product, onDelete }) => {
                                 <i className="material-icons">edit</i>
                             </Link>
                             <i className="material-icons" onClick={handleDelete}>delete</i>
-                            {/* {product.checkOutButton}</button> */}</div>
-                        
-        </div>
+                            {/* {product.checkOutButton}</button> */}</div>             
+        </div>              
     )
 }
 

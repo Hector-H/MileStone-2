@@ -1,9 +1,12 @@
 // Dependencies
-// import './App.css';
+
+// import './Products.css';
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react'
 import productsSeed from './SeedData/Product_Seed.js';
+//import { products } from "flea_market\src\components\Product\Products.css";
+
 
 // Components
 import NavBar from './components/NavBar/NavBar';
@@ -20,6 +23,12 @@ import Cart from './components/NavBar/Cart.js';
 import ProfilePage from './components/NavBar/ProfilePage.js';
 import ProductById from './components/Product/ProductById.js'
 import ProfileCreate from './components/Profile/ProfileCreate.js';
+
+
+
+
+
+
 
 //setSeeds
 function App() {
@@ -64,5 +73,6 @@ function App() {
     </div>
   );
 }
+<link rel="stylesheet" type ="text/css" href="Products.css" ></link>
 
 export default App;
