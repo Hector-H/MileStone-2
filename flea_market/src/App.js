@@ -18,9 +18,10 @@ import Distance from './components/SideBar/Distance.js';
 import Category from './components/SideBar/Category.js';
 import Cart from './components/NavBar/Cart.js';
 import ProfilePage from './components/NavBar/ProfilePage.js';
-import ProductById from './components/Product/ProductbyId.js'
+import ProductById from './components/Product/ProductById.js'
 import ProfileCreate from './components/Profile/ProfileCreate.js';
 
+//setSeeds
 function App() {
   const [seeds, setSeeds] = useState(productsSeed)
 
