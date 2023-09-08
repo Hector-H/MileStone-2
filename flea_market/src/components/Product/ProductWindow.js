@@ -10,6 +10,12 @@ export default function ProductWindow({ seeds }) {
     const [fetchError, setFetchError] = useState(null)
     const [products, setProducts] = useState(null)
 
+    const handleDelete = (id) => {
+        setProducts(prevProducts => {
+            return prevProducts.filter(pd => pd.id !== id)
+        })
+    }
+
     // Fetch products from API
     useEffect(() => {
         const fetchProducts = async () => {
@@ -39,7 +45,7 @@ export default function ProductWindow({ seeds }) {
                 <div className='products'>
                     {products.map(product => (
                         <>
-                            <ProductCard key={product.id} product={product}/>
+                            <ProductCard key={product.id} product={product} onDelete={handleDelete}/>
                         </>
                     ))}
                 </div>
