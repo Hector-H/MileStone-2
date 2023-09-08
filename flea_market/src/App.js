@@ -18,8 +18,9 @@ import Distance from './components/SideBar/Distance.js';
 import Category from './components/SideBar/Category.js';
 import Cart from './components/NavBar/Cart.js';
 import ProfilePage from './components/NavBar/ProfilePage.js';
-import ProductById from './components/Product/ProductbyId.js'
+import ProductById from './components/Product/ProductById.js'
 import ProfileCreate from './components/Profile/ProfileCreate.js';
+import SearchResults from './components/NavBar/SearchResults.js';
 
 function App() {
   const [seeds, setSeeds] = useState(productsSeed)
@@ -58,6 +59,7 @@ function App() {
           <Route path="/ProfilePage" element={<ProfilePage />} />
           <Route path="/products/:id" element={<ProductById />} />
           <Route path="/profiles/create" element={<ProfileCreate />} />
+          <Route path="/search" element={<SearchResults />} />
         </Routes>
       </main>
     </div>
