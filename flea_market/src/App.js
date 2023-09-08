@@ -18,7 +18,7 @@ import Distance from './components/SideBar/Distance.js';
 import Category from './components/SideBar/Category.js';
 import Cart from './components/NavBar/Cart.js';
 import ProfilePage from './components/NavBar/ProfilePage.js';
-import ProductById from './components/Product/ProductById.js';
+import ProductById from './components/Product/ProductbyId.js'
 import ProfileCreate from './components/Profile/ProfileCreate.js';
 
 function App() {
@@ -48,7 +48,7 @@ function App() {
         <Routes>
           <Route path="/" element={<ProductWindow seeds={seeds} />} />
           <Route path="/products/create" element={<ProductCreate />} />
-          <Route path="/products/edit" element={<ProductEdit />} />
+          <Route path="/products/edit/:id" element={<ProductEdit />} />
           <Route path="/AboutUs" element={<AboutUs />} />
           <Route path="/ContactUs" element={<ContactUs />} />
           <Route path="/HelpPage" element={<HelpPage />} />
