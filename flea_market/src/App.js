@@ -1,11 +1,12 @@
 // Dependencies
 
-// import './Products.css';
+// import './App.css';
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react'
 import productsSeed from './SeedData/Product_Seed.js';
 //import { products } from "flea_market\src\components\Product\Products.css";
+import '.index.css';
 
 
 // Components
