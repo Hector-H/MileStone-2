@@ -1,6 +1,7 @@
 // Dependencies
 const express = require('express');
 const profiles = require('express').Router();
+const pool = require("../db");
 
 // Index Route
 profiles.get('/', async (req, res) => {
@@ -25,7 +26,14 @@ profiles.get('/:id', async (req, res) => {
 // Create a profile
 profiles.post('/', async (req, res) => {
     try {
-        res.json({message: 'Profiles Create'})
+        // res.json({message: 'Profiles Create'})
+        const { description } = req.body;
+        const newProfile = await pool.query(
+            "INSERT INTO profiles (description) VALUES($1)", 
+            [description] 
+            );
+
+            res.json(newProfile);
     } catch (error) {
         console.log(error)
         res.status(500).json({ message: 'Something went wrong', error: error.message })
