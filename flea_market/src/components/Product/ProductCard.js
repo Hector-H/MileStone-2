@@ -1,6 +1,7 @@
 // import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import supabase from "../../supabaseClient"
+import './Products.css'
 
 const ProductCard = ({ product, onDelete }) => {
 

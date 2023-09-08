@@ -6,7 +6,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react'
 import productsSeed from './SeedData/Product_Seed.js';
 //import { products } from "flea_market\src\components\Product\Products.css";
-import '.index.css';
+//import '.index.css';
 
 
 // Components
@@ -74,6 +74,6 @@ function App() {
     </div>
   );
 }
-<link rel="stylesheet" type ="text/css" href="Products.css" ></link>
+
 
 export default App;
