@@ -1,6 +1,5 @@
 //Dependencies
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import supabase from '../../supabaseClient'
 import ProductCard from './ProductCard'
 
