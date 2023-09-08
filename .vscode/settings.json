@@ -21,5 +21,8 @@
     "peacock.color": "#832561",
     "githubPullRequests.ignoredPullRequestBranches": [
         "main"
+    ],
+    "cSpell.words": [
+        "supabase"
     ]
 }
