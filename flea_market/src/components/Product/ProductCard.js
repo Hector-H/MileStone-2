@@ -23,7 +23,7 @@ const ProductCard = ({ product, onDelete }) => {
 
     return (
         <div>
-                        <Link to={`/products/${product.id}`}>{product.title}</Link>
+                        <Link to={`/Products.css/${product.id}`}>{product.title}</Link>
                         <h3>{product.details}</h3>
                         <h3>{product.dateposted}</h3>
                         <h3>${product.price}</h3>

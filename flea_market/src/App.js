@@ -24,6 +24,7 @@ import Cart from './components/NavBar/Cart.js';
 import ProfilePage from './components/NavBar/ProfilePage.js';
 import ProductById from './components/Product/ProductById.js'
 import ProfileCreate from './components/Profile/ProfileCreate.js';
+import ProductCard from './components/Product/ProductCard.js';
 
 
 
@@ -71,6 +72,11 @@ function App() {
           <Route path="/profiles/create" element={<ProfileCreate />} />
         </Routes>
       </main>
+      <body>
+        <Routes>
+          <Route path="/ProductCard" element={<ProductCard />} />
+        </Routes>
+      </body>
     </div>
   );
 }
