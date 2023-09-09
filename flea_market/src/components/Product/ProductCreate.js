@@ -4,6 +4,7 @@ import supabase from '../../supabaseClient'
 
 
 
+
 export default function ProductCreate() {
 
     const navigate = useNavigate()
