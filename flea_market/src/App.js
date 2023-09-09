@@ -41,11 +41,6 @@ function App() {
       <header className="App-header">
         <NavBar />
       </header>
-      <body>
-        <Routes>
-          <Route path="/ProductCard" element={<ProductCard />} />
-        </Routes>
-      </body>
       <section>
         <nav>
           <ul>
@@ -64,6 +59,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<ProductWindow seeds={seeds} />} />
+          <Route path="/ProductCard" element={<ProductCard />} />
           <Route path="/products/create" element={<ProductCreate />} />
           <Route path="/products/edit/:id" element={<ProductEdit />} />
           <Route path="/AboutUs" element={<AboutUs />} />
