@@ -5,8 +5,7 @@ import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react'
 import productsSeed from './SeedData/Product_Seed.js';
-//import { products } from "flea_market\src\components\Product\Products.css";
-//import '.index.css';
+
 
 
 // Components
@@ -58,8 +57,8 @@ function App() {
       </section>
       <main>
         <Routes>
-          <Route path="/" element={<ProductWindow seeds={seeds} />} />
-          <Route path="/ProductCard" element={<ProductCard />} />
+          
+          
           <Route path="/products/create" element={<ProductCreate />} />
           <Route path="/products/edit/:id" element={<ProductEdit />} />
           <Route path="/AboutUs" element={<AboutUs />} />
@@ -73,6 +72,13 @@ function App() {
           <Route path="/profiles/create" element={<ProfileCreate />} />
         </Routes>
       </main>
+      <body>
+        <Routes>
+        <Route path="/ProductCard" element={<ProductCard />} />
+        <Route path="/" element={<ProductWindow seeds={seeds} />} />
+
+        </Routes>
+      </body>
 
     </div>
   );
