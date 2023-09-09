@@ -6,6 +6,7 @@ import AboutUs from "../SideBar/AboutUs";
 import ContactUs from "../SideBar/ContactUs";
 import HelpPage from "../SideBar/HelpPage";
 // import supabase from "../../supabaseClient";
+import "./SideBar.css";
 
 function SideBar(props) {
 
@@ -26,6 +27,7 @@ function SideBar(props) {
                     <Route path="/ContactUs" component={ContactUs} />
                     <Route path="/HelpPage" component={HelpPage} />
                 </Routes>
+                
         </div>
     );
 }
