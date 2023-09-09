@@ -4,6 +4,7 @@ import SearchBar from "./SearchBar";
 import "./NavBar.css";
 
 export default function NavBar(props) {
+
     return (
         <div className="NavBar">
             <li><Link to="/">FleaMarket</Link></li>
