@@ -41,6 +41,11 @@ function App() {
       <header className="App-header">
         <NavBar />
       </header>
+      <body>
+        <Routes>
+          <Route path="/ProductCard" element={<ProductCard />} />
+        </Routes>
+      </body>
       <section>
         <nav>
           <ul>
@@ -72,11 +77,7 @@ function App() {
           <Route path="/profiles/create" element={<ProfileCreate />} />
         </Routes>
       </main>
-      <body>
-        <Routes>
-          <Route path="/ProductCard" element={<ProductCard />} />
-        </Routes>
-      </body>
+
     </div>
   );
 }

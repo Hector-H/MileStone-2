@@ -6,7 +6,7 @@ import ProductCard from './ProductCard'
 
 import "./Products.css";
 
-export default function ProductWindow({ seeds }) {
+export default function ProductWindow({ Products.css }) {
     const [fetchError, setFetchError] = useState(null)
     const [products, setProducts] = useState(null)
 

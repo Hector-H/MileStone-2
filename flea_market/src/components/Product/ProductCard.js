@@ -1,7 +1,7 @@
 // import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import supabase from "../../supabaseClient"
-import './Products.css'
+import './Products.css';
 
 const ProductCard = ({ product, onDelete }) => {
 
@@ -23,6 +23,7 @@ const ProductCard = ({ product, onDelete }) => {
 
     return (
         <div>
+            <h2>
                         <Link to={`/Products.css/${product.id}`}>{product.title}</Link>
                         <h3>{product.details}</h3>
                         <h3>{product.dateposted}</h3>
@@ -36,7 +37,8 @@ const ProductCard = ({ product, onDelete }) => {
                                 <i className="material-icons">edit</i>
                             </Link>
                             <i className="material-icons" onClick={handleDelete}>delete</i>
-                            {/* {product.checkOutButton}</button> */}</div>             
+                            {/* {product.checkOutButton}</button> */}</div>   
+                            </h2>          
         </div>              
     )
 }

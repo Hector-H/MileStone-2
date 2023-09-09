@@ -8,42 +8,13 @@ body {
   align-content: center;
 }
 
-.productCard {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: right;
-  width: 250px;
-  height: 350px;
-  margin: 100px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 0 10px #ccc;
-  background-color: #fff;
-  color: #000;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-  box-sizing: content-box;
-  text-align: center;
-  max-block-size: 50px;
-  image-rendering: crisp-edges;
+.container{
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.ProductWindow {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: right;
-  width: 250px;
-  height: 350px;
-  margin: 100px;
-  padding: 10px;
-  border: 20px solid #44a2a8;
-  border-radius: 5px;
-  box-shadow: 0 0 10px #ccc;
-  background-color: #fff;
-  color: #000;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
+.card{
+  border-radius: 10px;
+  padding: 10px 10px 10px;
+  margin-top: 50px;
 }
