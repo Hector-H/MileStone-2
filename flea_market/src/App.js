@@ -57,8 +57,7 @@ function App() {
       </section>
       <main>
         <Routes>
-          
-          
+          <Route path="/" element={<SideBar />} />
           <Route path="/products/create" element={<ProductCreate />} />
           <Route path="/products/edit/:id" element={<ProductEdit />} />
           <Route path="/AboutUs" element={<AboutUs />} />
@@ -76,7 +75,6 @@ function App() {
         <Routes>
         <Route path="/ProductCard" element={<ProductCard />} />
         <Route path="/" element={<ProductWindow seeds={seeds} />} />
-
         </Routes>
       </body>
 
