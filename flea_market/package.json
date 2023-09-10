@@ -42,6 +42,7 @@
     ]
   },
   "devDependencies": {
+    "css-loader": "^6.8.1",
     "jest": "^27.5.1"
   },
   "description": "General Requirements\r This is a group project!\r Just to clarify, your instructional staff will help you in building groups in your cohort.\r This game cannot be an assignment we've already done in class.\r This application must run in a web browser.\r This application must be tracked in GitHub, with a minimum of 20 commits.\r Your empty project repository must be up on GitHub on day one of development and aim for multiple commits per day.\r This application must be deployed! You will need to use a service like Heroku, as this project will need to have a deployed back-end.\r Application Requirements\r Your application must be a full-stack application using your own front and back-end.\r Your application should use full CRUD functionality with the database.\r Your application should be a complete product.\r Your application must be deployed online using deployment sites like Heroku or Netlify.\r Effort must be spent on styling and appearance\r You should use several sensibly named components in React\r The application should have a Readme.md file in the GitHub repository that describes the inspiration for the application, how to use the application, lists the technologies used to build the application, and addresses any outstanding bugs or unfinished functionality",

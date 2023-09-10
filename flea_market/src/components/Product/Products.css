@@ -1,35 +1,62 @@
-.productCard {
-    display: flex;
-    flex-direction: column;
+ProductCard {
+    display: inline-block;
+    box-sizing: content-box;
     justify-content: space-between;
     align-items: center;
     width: 250px;
     height: 350px;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px #ccc;
-    background-color: #fff;
+    margin: 100px;
+    padding: 6rem;
     color: #000;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
+    box-sizing: content-box;
+    text-align: center;
+    max-block-size: 50px;
+    image-rendering: crisp-edges;
+    margin-inline-start: 20px;
+    writing-mode: horizontal-tb;
+
 }
 
-.ProductWindow {
-    display: flex;
-    flex-direction: column;
+.h3{
+    border: 5px solid #000;
+    box-sizing: content-box;
+    font-size: medium;
+    display: inline;
+}
+
+ProductWindow {
+    display: inline-block;
+    box-sizing: content-box;
     justify-content: space-between;
     align-items: center;
     width: 250px;
     height: 350px;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px #ccc;
-    background-color: #fff;
+    margin: 100px;
+    padding: 6rem;
     color: #000;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
+    margin-inline-start: 20px;
+    writing-mode: horizontal-tb;
+}
+
+body{
+    justify-content: space-between;
+    align-items: center;
+    color: #000;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    margin-inline-start: 20px;
+    writing-mode: horizontal-tb; 
+    font-size: medium;
+}
+
+img{
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    border: 3px solid #000;
+    border-radius: 5px;
 }

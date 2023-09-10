@@ -1,0 +1,8 @@
+.SideBar{
+    display: inline-table;
+    font-size: x-large;
+    font-family: 'Times New Roman', Times, serif;
+    padding-inline: 10px;
+    position: fixed;
+    height: fit-content;
+}
