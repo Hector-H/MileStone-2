@@ -17,6 +17,14 @@ ProductCard {
     image-rendering: crisp-edges;
     margin-inline-start: 20px;
     writing-mode: horizontal-tb;
+
+}
+
+.h3{
+    border: 5px #000;
+    box-sizing: content-box;
+    font-size: medium;
+    display: inline;
 }
 
 ProductWindow {

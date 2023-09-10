@@ -25,12 +25,12 @@ const ProductCard = ({ product, onDelete }) => {
         <div>
             <h2>
                         <Link to={`./Products.css${product.id}`}>{product.title}</Link>
-                        <h3>{product.category}</h3>
+                        <h3> Category: {product.category}</h3>
                         <img src={product.image} alt="product" />
-                        <h3>{product.details}</h3>
-                        <h3>${product.price}</h3>
-                        <h3>{product.dateposted}</h3>
-                        <h3>{product.reviews}</h3>
+                        <h3> Description: {product.details}</h3>
+                        <h3>Price: ${product.price}</h3>
+                        <h3>Posted: {product.dateposted}</h3>
+                        <h3> Reviews: {product.reviews}</h3>
                         {/* <button> */}
                         <div>
                             <Link to={'/products/edit/' + product.id}>

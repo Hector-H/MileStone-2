@@ -25,7 +25,7 @@ import ProductById from './components/Product/ProductById.js'
 import ProfileCreate from './components/Profile/ProfileCreate.js';
 import SearchResults from './components/NavBar/SearchResults.js';
 import ProductCard from './components/Product/ProductCard.js';
-import SearchResults from './components/NavBar/SearchResults.js';
+//import SearchResults from './components/NavBar/SearchResults.js';
 
 
 
