@@ -1,12 +1,9 @@
 // Dependencies
-
 // import './App.css';
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react'
-import productsSeed from './SeedData/Product_Seed.js';
-
-
+import productsSeed from './components/Product/ProductCard.js';
 
 // Components
 import NavBar from './components/NavBar/NavBar';
@@ -27,12 +24,6 @@ import SearchResults from './components/NavBar/SearchResults.js';
 import ProductCard from './components/Product/ProductCard.js';
 //import SearchResults from './components/NavBar/SearchResults.js';
 
-
-
-
-
-
-
 //setSeeds
 function App() {
   const [seeds, setSeeds] = useState(productsSeed)
@@ -49,25 +40,21 @@ function App() {
           </Routes>
         </nav>
       </section>
-      <section>
-      <body>
-        <center>
-      <Routes>
-        <Route path="/ProductCard" element={<ProductCard />} />
-        <Route path="/" element={<ProductWindow seeds={seeds} />} />
-        <Route path="ProductWindow" element={<ProductWindow />} />
-        <Route path="/products/create" element={<ProductCreate />} />
-        <Route path="/products/edit/:id" element={<ProductEdit />} />
-        <Route path="/AboutUs" element={<AboutUs />} />
-        <Route path="/ContactUs" element={<ContactUs />} />
-        <Route path="/HelpPage" element={<HelpPage />} />
-        <Route path="/Distance" element={<Distance />} />
-        <Route path="/Category" element={<Category />} />
-        <Route path="/Cart" element={<Cart />} />
-        <Route path="/ProfilePage" element={<ProfilePage />} />
-        <Route path="/products/:id" element={<ProductById />} />
-        <Route path="/profiles/create" element={<ProfileCreate />} />
-        <Route path="/search" element={<SearchResults />} />
+      <main>
+        <Routes>
+          <Route path="/" element={<ProductWindow seeds={seeds} />} />
+          <Route path="/products/create" element={<ProductCreate />} />
+          <Route path="/products/edit/:id" element={<ProductEdit />} />
+          <Route path="/AboutUs" element={<AboutUs />} />
+          <Route path="/ContactUs" element={<ContactUs />} />
+          <Route path="/HelpPage" element={<HelpPage />} />
+          <Route path="/Distance" element={<Distance />} />
+          <Route path="/Category" element={<Category />} />
+          <Route path="/Cart" element={<Cart />} />
+          <Route path="/ProfilePage" element={<ProfilePage />} />
+          <Route path="/products/:id" element={<ProductById />} />
+          <Route path="/profiles/create" element={<ProfileCreate />} />
+          <Route path="/search" element={<SearchResults />} />
         </Routes>
         </center>
       </body>
