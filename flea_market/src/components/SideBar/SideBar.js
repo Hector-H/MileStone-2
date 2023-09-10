@@ -11,6 +11,8 @@ import ProductById from '../Product/ProductById';
 import "./SideBar.css";
 import ProductEdit from '../Product/ProductEdit';
 import ProfileCreate from '../Profile/ProfileCreate';
+import SearchBar from '../NavBar/SearchBar';
+
 
 function SideBar(props) {
 
@@ -20,13 +22,14 @@ function SideBar(props) {
                 <ul>
                     <li><Link to="/Category">Category</Link></li>
                     <li><Link to="/Distance">Distance</Link></li>
+                    <li><Link to="/ProductByID">Listings</Link></li>
+                    <li><Link to="/ProfileCreate">Create Profile</Link></li>
+                    <li><Link to="/ProductCreate">Create Listing</Link></li>
+                    <li><Link to="/ProductEdit">Edit Listing</Link></li>
+                    <li><Link to="/HelpPage">Help Page</Link></li>
                     <li><Link to="/AboutUs">About Us</Link></li>
                     <li><Link to="/ContactUs">Contact Us</Link></li>
-                    <li><Link to="/HelpPage">Help Page</Link></li>
-                    <li><Link to="/ProductCreate">Create Listing</Link></li>
-                    <li><Link to="/ProductByID">Listings</Link></li>
-                    <li><Link to="/ProductEdit">Edit Listing</Link></li>
-                    <li><Link to="/ProfileCreate">Create Profile</Link></li>
+                    
                 </ul>
                 <Routes>
                     <Route path="/Category" component={Category} />
@@ -38,10 +41,14 @@ function SideBar(props) {
                     <Route path="/ProductByID" component={ProductById} />
                     <Route path="/ProductEdit" component={ProductEdit}/>
                     <Route path="/ProfileCreate" component={ProfileCreate}/>
+                    
                 </Routes>
                 
         </div>
     );
 }
+//<Route path="/SearchBar" component={SearchBar}/>
+//<li><Link to="/SearchBar">Search</Link></li>
+//Search page in progress! link to SearchBar
 
 export default SideBar;

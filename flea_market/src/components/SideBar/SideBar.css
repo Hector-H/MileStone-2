@@ -1,8 +1,8 @@
 .SideBar{
     display: inline-table;
-    background-color: aquamarine;
     font-size: x-large;
     font-family: 'Times New Roman', Times, serif;
-    background-color: grey;
     padding-inline: 10px;
+    position: fixed;
+    height: fit-content;
 }
