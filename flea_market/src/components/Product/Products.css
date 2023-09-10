@@ -6,7 +6,6 @@ ProductCard {
     height: 350px;
     margin: 100px;
     padding: 6rem;
-    box-shadow: 0 0 10px #ccc;
     background-color: #fff;
     color: #000;
     text-decoration: none;
@@ -35,7 +34,6 @@ ProductWindow {
     height: 350px;
     margin: 100px;
     padding: 6rem;
-    box-shadow: 0 0 10px #ccc;
     background-color: #b2cac7;
     color: #000;
     text-decoration: none;
