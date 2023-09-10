@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import supabase from '../../supabaseClient'
 import ProductCard from './ProductCard'
 
-//import './Products.css';
+import './Products.css';
 
 export default function ProductWindow({ seeds }) {
     const [fetchError, setFetchError] = useState(null)

@@ -1,8 +1,7 @@
 .ProductCard {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    align-items: right;
+    align-items: center;
     width: 250px;
     height: 350px;
     margin: 100px;
@@ -22,9 +21,8 @@
 
 .ProductWindow {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    align-items: right;
+    align-items: center;
     width: 250px;
     height: 350px;
     margin: 100px;
@@ -32,7 +30,7 @@
     border: 20px solid #44a2a8;
     border-radius: 5px;
     box-shadow: 0 0 10px #ccc;
-    background-color: #fff;
+    background-color: #b2cac7;
     color: #000;
     text-decoration: none;
     transition: all 0.3s ease-in-out;

@@ -12,17 +12,6 @@ import productsSeed from './SeedData/Product_Seed.js';
 import NavBar from './components/NavBar/NavBar';
 import SideBar from './components/SideBar/SideBar';
 import ProductWindow from './components/Product/ProductWindow';
-import ProductCreate from './components/Product/ProductCreate.js';
-import ProductEdit from './components/Product/ProductEdit.js';
-import AboutUs from './components/SideBar/AboutUs';
-import ContactUs from './components/SideBar/ContactUs.js';
-import HelpPage from './components/SideBar/HelpPage.js';
-import Distance from './components/SideBar/Distance.js';
-import Category from './components/SideBar/Category.js';
-import Cart from './components/NavBar/Cart.js';
-import ProfilePage from './components/NavBar/ProfilePage.js';
-import ProductById from './components/Product/ProductById.js'
-import ProfileCreate from './components/Profile/ProfileCreate.js';
 import ProductCard from './components/Product/ProductCard.js';
 
 
@@ -47,13 +36,14 @@ function App() {
           </Routes>
         </nav>
       </section>
+      <section>
       <main>
       <Routes>
         <Route path="/ProductCard" element={<ProductCard />} />
         <Route path="/" element={<ProductWindow seeds={seeds} />} />
         </Routes>
       </main>
-
+      </section>
     </div>
   );
 }
