@@ -19,12 +19,7 @@ ProductCard {
 
 }
 
-.h3{
-    border: 5px solid #000;
-    box-sizing: content-box;
-    font-size: medium;
-    display: inline;
-}
+
 
 ProductWindow {
     display: inline-block;
