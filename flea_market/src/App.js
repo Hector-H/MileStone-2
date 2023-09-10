@@ -37,8 +37,10 @@ function App() {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/products">Products</Link></li>
             <li><Link to="/products/create">Create Product</Link></li>
-            <li><Link to="/products/edit">Edit Product</Link></li>
             <li><Link to="/profiles/create">Create a Profile</Link></li>
+            <li><Link to="/AboutUs">About Us</Link></li>
+            <li><Link to="/ContactUs">Contact Us</Link></li>
+            <li><Link to="/HelpPage">Help Page</Link></li>
           </ul>
           <Routes>
             <Route path="/products" element={<ProductWindow />} />
