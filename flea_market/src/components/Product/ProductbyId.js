@@ -35,13 +35,19 @@ export default function ProductById({ match }) {
                 setProducts(null);
                 console.log(error);
             }
-            if (data) {
+            if (data && data.length > 0) {
                 setProducts(data[0]);
+
+            } else {
+                setProducts(null);
             }
         };
         fetchProducts();
-    })
+    }, [productId])
 
+    if (!products) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <div>
