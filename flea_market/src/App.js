@@ -42,41 +42,17 @@ function App() {
       </header>
       <section>
         <nav>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/products">Products</Link></li>
-            <li><Link to="/products/create">Create Product</Link></li>
-            <li><Link to="/products/edit">Edit Product</Link></li>
-            <li><Link to="/profiles/create">Create a Profile</Link></li>
-          </ul>
           <Routes>
             <Route path="/" element={<SideBar />} />
-            <Route path="/products" element={<SideBar />} />
           </Routes>
         </nav>
       </section>
       <main>
-        <Routes>
-          <Route path="/" element={<SideBar />} />
-          <Route path="/products/create" element={<ProductCreate />} />
-          <Route path="/products/edit/:id" element={<ProductEdit />} />
-          <Route path="/AboutUs" element={<AboutUs />} />
-          <Route path="/ContactUs" element={<ContactUs />} />
-          <Route path="/HelpPage" element={<HelpPage />} />
-          <Route path="/Distance" element={<Distance />} />
-          <Route path="/Category" element={<Category />} />
-          <Route path="/Cart" element={<Cart />} />
-          <Route path="/ProfilePage" element={<ProfilePage />} />
-          <Route path="/products/:id" element={<ProductById />} />
-          <Route path="/profiles/create" element={<ProfileCreate />} />
-        </Routes>
-      </main>
-      <body>
-        <Routes>
+      <Routes>
         <Route path="/ProductCard" element={<ProductCard />} />
         <Route path="/" element={<ProductWindow seeds={seeds} />} />
         </Routes>
-      </body>
+      </main>
 
     </div>
   );

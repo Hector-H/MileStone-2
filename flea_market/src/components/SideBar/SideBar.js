@@ -7,7 +7,10 @@ import ContactUs from "../SideBar/ContactUs";
 import HelpPage from "../SideBar/HelpPage";
 // import supabase from "../../supabaseClient";
 import ProductCreate from '../Product/ProductCreate';
+import ProductById from '../Product/ProductById';
 import "./SideBar.css";
+import ProductEdit from '../Product/ProductEdit';
+import ProfileCreate from '../Profile/ProfileCreate';
 
 function SideBar(props) {
 
@@ -20,7 +23,10 @@ function SideBar(props) {
                     <li><Link to="/AboutUs">About Us</Link></li>
                     <li><Link to="/ContactUs">Contact Us</Link></li>
                     <li><Link to="/HelpPage">Help Page</Link></li>
-                    <li><Link to="/ProductCreate">Create Product</Link></li>
+                    <li><Link to="/ProductCreate">Create Listing</Link></li>
+                    <li><Link to="/ProductByID">Listings</Link></li>
+                    <li><Link to="/ProductEdit">Edit Listing</Link></li>
+                    <li><Link to="/ProfileCreate">Create Profile</Link></li>
                 </ul>
                 <Routes>
                     <Route path="/Category" component={Category} />
@@ -29,6 +35,9 @@ function SideBar(props) {
                     <Route path="/ContactUs" component={ContactUs} />
                     <Route path="/HelpPage" component={HelpPage} />
                     <Route path="/ProductCreate" component={ProductCreate} />
+                    <Route path="/ProductByID" component={ProductById} />
+                    <Route path="/ProductEdit" component={ProductEdit}/>
+                    <Route path="/ProfileCreate" component={ProfileCreate}/>
                 </Routes>
                 
         </div>
