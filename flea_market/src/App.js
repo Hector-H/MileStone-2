@@ -41,27 +41,32 @@ function App() {
             <li><Link to="/profiles/create">Create a Profile</Link></li>
           </ul>
           <Routes>
-            <Route path="/" element={<SideBar />} />
-            <Route path="/products" element={<SideBar />} />
+            <Route path="/products" element={<ProductWindow />} />
+            <Route path="/AboutUs" element={<AboutUs />} />
+        <Route path="/ContactUs" element={<ContactUs />} />
+        <Route path="/HelpPage" element={<HelpPage />} />
+        <Route path="/Distance" element={<Distance />} />
+        <Route path="/Category" element={<Category />} />
+        <Route path="/Cart" element={<Cart />} />
+        <Route path="/ProfilePage" element={<ProfilePage />} />
+        <Route path="/products/:id" element={<ProductById />} />
+        <Route path="/profiles/create" element={<ProfileCreate />} />
+        <Route path="/search" element={<SearchResults />} />
+        <Route path="/products/create" element={<ProductCreate />} />
+
+            
           </Routes>
         </nav>
       </section>
       <main>
         <Routes>
           <Route path="/" element={<ProductWindow seeds={seeds} />} />
-          <Route path="/products/create" element={<ProductCreate />} />
-          <Route path="/products/edit/:id" element={<ProductEdit />} />
-          <Route path="/AboutUs" element={<AboutUs />} />
-          <Route path="/ContactUs" element={<ContactUs />} />
-          <Route path="/HelpPage" element={<HelpPage />} />
-          <Route path="/Distance" element={<Distance />} />
-          <Route path="/Category" element={<Category />} />
-          <Route path="/Cart" element={<Cart />} />
-          <Route path="/ProfilePage" element={<ProfilePage />} />
-          <Route path="/products/:id" element={<ProductById />} />
-          <Route path="/profiles/create" element={<ProfileCreate />} />
-          <Route path="/search" element={<SearchResults />} />
           <Route path="/ProdcutCard" element={<ProductCard/>} />
+          <Route path="/ProductCard" element={<ProductCard />} />
+        <Route path="/" element={<ProductWindow seeds={seeds} />} />
+        <Route path="ProductWindow" element={<ProductWindow />} />
+        <Route path="/products/edit/:id" element={<ProductEdit />} />
+
         </Routes>
       </main>
     </div>
