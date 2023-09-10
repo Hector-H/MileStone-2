@@ -37,12 +37,15 @@ function App() {
         </nav>
       </section>
       <section>
-      <main>
+      <body>
+        <center>
       <Routes>
         <Route path="/ProductCard" element={<ProductCard />} />
         <Route path="/" element={<ProductWindow seeds={seeds} />} />
+        <Route path="ProductWindow" element={<ProductWindow />} />
         </Routes>
-      </main>
+        </center>
+      </body>
       </section>
     </div>
   );
