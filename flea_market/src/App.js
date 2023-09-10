@@ -5,7 +5,6 @@ import { Routes, Route, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react'
 import productsSeed from './components/Product/ProductCard.js';
 
-
 // Components
 import NavBar from './components/NavBar/NavBar';
 import SideBar from './components/SideBar/SideBar';
@@ -22,7 +21,10 @@ import ProfilePage from './components/NavBar/ProfilePage.js';
 import ProductById from './components/Product/ProductById.js'
 import ProfileCreate from './components/Profile/ProfileCreate.js';
 import SearchResults from './components/NavBar/SearchResults.js';
+import ProductCard from './components/Product/ProductCard.js';
+//import SearchResults from './components/NavBar/SearchResults.js';
 
+//setSeeds
 function App() {
   const [seeds, setSeeds] = useState(productsSeed)
 
@@ -33,16 +35,8 @@ function App() {
       </header>
       <section>
         <nav>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/products">Products</Link></li>
-            <li><Link to="/products/create">Create Product</Link></li>
-            <li><Link to="/products/edit">Edit Product</Link></li>
-            <li><Link to="/profiles/create">Create a Profile</Link></li>
-          </ul>
           <Routes>
             <Route path="/" element={<SideBar />} />
-            <Route path="/products" element={<SideBar />} />
           </Routes>
         </nav>
       </section>
@@ -62,9 +56,12 @@ function App() {
           <Route path="/profiles/create" element={<ProfileCreate />} />
           <Route path="/search" element={<SearchResults />} />
         </Routes>
-      </main>
+        </center>
+      </body>
+      </section>
     </div>
   );
 }
+
 
 export default App;

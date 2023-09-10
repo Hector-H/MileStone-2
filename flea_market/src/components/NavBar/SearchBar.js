@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import SearchResults from './SearchResults';
 
 export default function SearchBar(props) {
     const [searchTerm, setSearchTerm] = useState("")
@@ -48,3 +49,4 @@ export default function SearchBar(props) {
 //             </form>
 //         </div>
 //     );
+
