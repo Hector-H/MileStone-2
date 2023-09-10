@@ -11,7 +11,7 @@ import ProductById from '../Product/ProductById';
 import "./SideBar.css";
 import ProductEdit from '../Product/ProductEdit';
 import ProfileCreate from '../Profile/ProfileCreate';
-import SearchBar from '../NavBar/SearchBar';
+// import SearchBar from '../NavBar/SearchBar';
 
 
 function SideBar(props) {
