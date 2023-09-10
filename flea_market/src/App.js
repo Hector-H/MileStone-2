@@ -61,7 +61,7 @@ function App() {
           <Route path="/products/:id" element={<ProductById />} />
           <Route path="/profiles/create" element={<ProfileCreate />} />
           <Route path="/search" element={<SearchResults />} />
-          <Route path="/ProdcutCard" element={ProductCard/>} />
+          <Route path="/ProdcutCard" element={<ProductCard/>} />
         </Routes>
       </main>
     </div>
