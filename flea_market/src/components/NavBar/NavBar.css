@@ -2,7 +2,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1rem;
     height: 5rem;
     border-bottom: 1px solid #ddd;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
@@ -10,6 +9,6 @@
     font-family: 'Times New Roman', Times, serif;
     font-weight: 200;
     font-style: oblique;
-    background-color: gray;
+    background-color: rgb(226, 192, 148);
     border: 5px black;
 }
