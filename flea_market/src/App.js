@@ -22,6 +22,7 @@ import ProfilePage from './components/NavBar/ProfilePage.js';
 import ProductById from './components/Product/ProductById.js'
 import ProfileCreate from './components/Profile/ProfileCreate.js';
 import SearchResults from './components/NavBar/SearchResults.js';
+import ProductCard from './components/Product/ProductCard.js';
 
 function App() {
   const [seeds, setSeeds] = useState(productsSeed)
@@ -61,6 +62,7 @@ function App() {
           <Route path="/products/:id" element={<ProductById />} />
           <Route path="/profiles/create" element={<ProfileCreate />} />
           <Route path="/search" element={<SearchResults />} />
+          <Route path="/ProdcutCard" element={ProductCard/>} />
         </Routes>
       </main>
     </div>
