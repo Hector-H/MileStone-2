@@ -7,7 +7,7 @@ import productsSeed from './SeedData/Product_Seed.js';
 
 // Components
 import NavBar from './components/NavBar/NavBar';
-import SideBar from './components/SideBar/SideBar';
+// import SideBar from './components/SideBar/SideBar';
 import ProductWindow from './components/Product/ProductWindow';
 import ProductCreate from './components/Product/ProductCreate.js';
 import ProductEdit from './components/Product/ProductEdit.js';
@@ -33,15 +33,13 @@ function App() {
       </header>
       <section>
         <nav>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/products">Products</Link></li>
-            <li><Link to="/products/create">Create Product</Link></li>
-            <li><Link to="/profiles/create">Create a Profile</Link></li>
-            <li><Link to="/AboutUs">About Us</Link></li>
-            <li><Link to="/ContactUs">Contact Us</Link></li>
-            <li><Link to="/HelpPage">Help Page</Link></li>
-          </ul>
+          
+            <Link to="/products/create">Create Product</Link>
+            <Link to="/profiles/create">Create a Profile</Link>
+            <Link to="/AboutUs">About Us</Link>
+            <Link to="/ContactUs">Contact Us</Link>
+            <Link to="/HelpPage">Help Page</Link>
+        
           <Routes>
             <Route path="/products" element={<ProductWindow />} />
           </Routes>
@@ -67,6 +65,11 @@ function App() {
           <Route path="/products/edit/:id" element={<ProductEdit />} />
         </Routes>
       </main>
+      <footer>
+          <div className="text-center">
+            All rights reserved
+          </div>
+        </footer>
     </div>
   );
 }
