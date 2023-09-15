@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import SearchResults from './SearchResults';
+import SearchResults from '../Components/SearchResults';
 
 export default function SearchBar(props) {
     const [searchTerm, setSearchTerm] = useState("")

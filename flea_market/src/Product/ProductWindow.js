@@ -1,6 +1,6 @@
-import { useEffect, useReducer, useContext } from "react";
+import { useEffect, useReducer } from "react";
 import { useParams } from "react-router-dom";
-import { Badge, Button, Card, Col, ListGroup, Row } from "react-bootstrap";
+import { Col, ListGroup, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet-async";
 
 import supabase from "../supabaseClient";
@@ -78,7 +78,12 @@ export default function ProductWindow() {
                             <h3>Price: ${product.price}</h3>
                         </ListGroup.Item>
                         <ListGroup.Item>
-                            <Rating 
+                            <h3>
+                                Date Listed: {product.created_at ? product.created_at.slice(0, 10) : 'N/A'}
+                            </h3>
+                        </ListGroup.Item>
+                        <ListGroup.Item>
+                            <Rating
                                 rating={product.rating}
                                 reviews={product.reviews}
                             />

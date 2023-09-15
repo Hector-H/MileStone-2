@@ -20,3 +20,28 @@
   flex-wrap: wrap;
   justify-content: center;
 } */
+
+.btn-primary {
+  background-color: #40acff;
+  color: #282c34;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 4vh;
+  border-top: 1px solid #ddd;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+  font-size: x-large;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 200;
+  font-style: oblique;
+  background-color: rgb(226, 192, 148);
+  padding: 0;
+  border: 5px black;
+}

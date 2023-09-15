@@ -1,6 +1,6 @@
 // import { useEffect, useState } from "react";
 // import { useNavigate, useParams } from "react-router-dom";
-// import supabase from "../../supabaseClient";
+// import supabase from "../supabaseClient";
 
 // export default function ProductEdit() {
 //     const { id } = useParams()

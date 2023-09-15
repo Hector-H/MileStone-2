@@ -15,8 +15,10 @@ import HelpPage from './SideBar/HelpPage.js';
 import Distance from './SideBar/Distance.js';
 import Category from './SideBar/Category.js';
 
+//CRUD Routes
+import ProductCreate from './Product/ProductCreate.js';
+import ProductEdit from './Product/ProductEdit.js';
 
-// import ProductCreate from './components/Product/ProductCreate.js';
 // import ProductEdit from './components/Product/ProductEdit.js';
 // import AboutUs from './components/SideBar/AboutUs';
 // import HelpPage from './components/SideBar/HelpPage.js';
@@ -53,6 +55,10 @@ function App() {
               <Route path="/HelpPage" element={<HelpPage />} />
               <Route path="/Distance" element={<Distance />} />
               <Route path="/Category" element={<Category />} />
+
+              {/* CRUD Routes */}
+              <Route path="/ProductCreate" element={<ProductCreate />} />
+              <Route path="/ProductEdit/:id" element={<ProductEdit />} />
             </Routes>
           </Container>
           {/* <Routes> */}
@@ -74,7 +80,7 @@ function App() {
           <Route path="/products/edit/:id" element={<ProductEdit />} /> */}
           {/* </Routes> */}
         </main>
-        <footer>
+        <footer className="footer">
           <div className="text-center">
             All Rights Reserved. &copy; 2023
           </div>

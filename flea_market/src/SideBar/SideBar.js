@@ -25,14 +25,8 @@ export default function SideBar() {
                 <LinkContainer to="/ProductCreate">
                     <Nav.Link>Create Product</Nav.Link>
                 </LinkContainer>
-                <LinkContainer to="/ProductEdit">
-                    <Nav.Link>Edit Product</Nav.Link>
-                </LinkContainer>
                 <LinkContainer to="/ProfileCreate">
                     <Nav.Link>Create Profile</Nav.Link>
-                </LinkContainer>
-                <LinkContainer to="/ProductEdit">
-                    <Nav.Link>Edit Profile</Nav.Link>
                 </LinkContainer>
             </Container>
         </div>

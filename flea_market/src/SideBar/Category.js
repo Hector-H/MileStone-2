@@ -1,5 +1,6 @@
 import { useReducer, useEffect } from "react";
 import { Row, Col, ListGroup } from "react-bootstrap";
+import { Helmet } from 'react-helmet-async';
 
 import supabase from "../supabaseClient";
 
@@ -42,6 +43,9 @@ export default function Category() {
 
     return (
         <div className="Category">
+            <Helmet>
+                <title>Categories</title>
+            </Helmet>
             <Row>
                 {products.map((product) => (
                     <Col

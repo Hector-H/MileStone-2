@@ -1,13 +1,25 @@
-export default function HelpPage(props) {
+import { Container, Row, Col } from 'react-bootstrap';
+import { Helmet } from 'react-helmet-async';
+
+export default function HelpPage() {
     return (
-        <div className="HelpPage">
-            <h1>Help Page</h1>
-            <p>How to use our website:</p>
-            <p>Create a profile</p>
-            <p>Create a product listing</p>
-            <p>Search for products</p>
-            <p>Buy products</p>
-            <p>Review products</p>
-        </div>
+        <Container className="HelpPage">
+            <Helmet>
+                <title>Help Page</title>
+            </Helmet>
+            <Row>
+                <Col>
+                    <h1>Help Page</h1>
+                    <p>How to use our website:</p>
+                    <ul>
+                        <li>Create a profile</li>
+                        <li>Create a product listing</li>
+                        <li>Search for products</li>
+                        <li>Buy products</li>
+                        <li>Review products</li>
+                    </ul>
+                </Col>
+            </Row>
+        </Container>
     );
 }
