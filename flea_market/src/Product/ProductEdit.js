@@ -66,10 +66,11 @@ export default function ProductEdit() {
                 <Helmet>
                     <title>Edit {title} Listing</title>
                 </Helmet>
+                {/* Write a function to update the product listing in the database */}
                 <Col>
-                    <h2>Edit Product {title}</h2>
+                    <h2>Edit Product: {title}</h2>
                     <Form onSubmit={handleSubmit}>
-                        <Form.Group controlId="title">
+                        <Form.Group id="title">
                             <Form.Label>Title:</Form.Label>
                             <Form.Control
                                 type="text"
@@ -80,7 +81,7 @@ export default function ProductEdit() {
                                 required
                             />
                         </Form.Group>
-                        <Form.Group controlId="details">
+                        <Form.Group id="details">
                             <FormGroup>Details:</FormGroup>
                             <Form.Control
                                 type="text"
@@ -90,7 +91,7 @@ export default function ProductEdit() {
                                 onChange={(e) => setDetails(e.target.value)}
                             />
                         </Form.Group>
-                        <Form.Group controlId="price">
+                        <Form.Group id="price">
                             <Form.Label>Price:</Form.Label>
                             <Form.Control
                                 type="number"
@@ -100,7 +101,7 @@ export default function ProductEdit() {
                                 onChange={(e) => setPrice(e.target.value)}
                             />
                         </Form.Group>
-                        <Form.Group controlId="category">
+                        <Form.Group id="category">
                             <Form.Label>Category:</Form.Label>
                             <Form.Control
                                 type="text"
@@ -110,14 +111,13 @@ export default function ProductEdit() {
                                 onChange={(e) => setCategory(e.target.value)}
                             />
                         </Form.Group>
-                        <Form.Group controlId="image">
+                        <Form.Group id="image">
                             <Form.Label>Image:</Form.Label>
                             <Form.Control
                                 type="text"
                                 name="image"
                                 id="image"
                                 value={image}
-                                pattern="^(https?://)?[^\s/$.?#].[^\s]*.(jpg|jpeg|gif|png|bmp)$"
                                 onChange={(e) => setImage(e.target.value)}
                                 required
                             />

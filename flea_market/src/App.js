@@ -19,21 +19,13 @@ import Category from './SideBar/Category.js';
 import ProductCreate from './Product/ProductCreate.js';
 import ProductEdit from './Product/ProductEdit.js';
 
-// import ProductEdit from './components/Product/ProductEdit.js';
-// import AboutUs from './components/SideBar/AboutUs';
-// import HelpPage from './components/SideBar/HelpPage.js';
-// import Distance from './components/SideBar/Distance.js';
-// import Category from './components/SideBar/Category.js';
 // import Cart from './components/NavBar/Cart.js';
 // import ProfilePage from './components/NavBar/ProfilePage.js';
 // import ProductById from './components/Product/ProductById.js'
 // import ProfileCreate from './components/Profile/ProfileCreate.js';
 // import SearchResults from './components/NavBar/SearchResults.js';
-// import ProductCard from './components/Product/ProductCard.js';
 
 function App() {
-  // const [seeds, setSeeds] = useState(productsSeed)
-
   return (
     <BrowserRouter>
       <div className="App">

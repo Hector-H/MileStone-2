@@ -1,9 +1,10 @@
 import { useEffect, useReducer } from "react";
-import { useParams } from "react-router-dom";
-import { Col, ListGroup, Row } from "react-bootstrap";
+import { useParams, useNavigate } from "react-router-dom";
+import { Col, ListGroup, Row, Button } from "react-bootstrap";
 import { Helmet } from "react-helmet-async";
 
 import supabase from "../supabaseClient";
+import ProductEdit from "./ProductEdit";
 import Rating from "../Components/Rating";
 import "./Products.css"
 
@@ -21,29 +22,21 @@ const reducer = (state, action) => {
 }
 
 export default function ProductWindow() {
-    // const [fetchError, setFetchError] = useState(null)
-    // const [products, setProducts] = useState(null)
-
-    // const handleDelete = (id) => {
-    //     setProducts(prevProducts => {
-    //         return prevProducts.filter(pd => pd.id !== id)
-    //     })
-    // }
     const { id } = useParams()
-
+    
     const [{ product }, dispatch] = useReducer(reducer, {
         product: {},
         loading: false,
         error: ''
     })
-
+    
     useEffect(() => {
         const fetchProduct = async () => {
             dispatch({ type: 'FETCH_REQUEST' })
             const { data, error } = await supabase
-                .from('products')
-                .select()
-                .eq('id', id)
+            .from('products')
+            .select()
+            .eq('id', id)
             if (error) {
                 dispatch({ type: 'FETCH_FAIL', payload: error.message })
             }
@@ -53,6 +46,20 @@ export default function ProductWindow() {
         }
         fetchProduct()
     }, [id])
+
+    const navigate = useNavigate()
+
+    const handleDelete = async () => {
+        const { error } = await supabase
+            .from('products')
+            .delete()
+            .eq('id', id)
+        if (error) {
+            alert(error.message)
+        } else {
+            navigate('/')
+        }
+    }
 
     return (
         <div>
@@ -91,6 +98,25 @@ export default function ProductWindow() {
                         </ListGroup.Item>
                         <ListGroup.Item>
                             <h3>Description: {product.details}</h3>
+                        </ListGroup.Item>
+                        {/* Button to delete product */}
+                        <ListGroup.Item>
+                            <Button
+                                type="button"
+                                variant="danger"
+                                className="btn-block"
+                                onClick={handleDelete}
+                            >
+                                Delete Product
+                            </Button>
+                            <Button
+                                type="button"
+                                variant="primary"
+                                className="btn-block"
+                                onClick={() => navigate(`/ProductEdit/${id}`)}
+                            >
+                                Edit Product
+                            </Button>
                         </ListGroup.Item>
                     </ListGroup>
                 </Col>

@@ -86,7 +86,6 @@ export default function ProductCreate() {
                             <Form.Control
                                 type="text"
                                 value={image}
-                                pattern="^(https?://)?[^\s/$.?#].[^\s]*.(jpg|jpeg|gif|png|bmp)$"
                                 onChange={(e) => setImage(e.target.value)}
                                 placeholder="Enter Product Image"
                                 required
