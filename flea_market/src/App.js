@@ -1,53 +1,56 @@
-// Dependencies
-// import './App.css';
 import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
-import { useEffect, useState } from 'react'
-import productsSeed from './SeedData/Product_Seed.js';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Container } from "react-bootstrap";
 
 // Components
-import NavBar from './components/NavBar/NavBar';
+import Home from './Components/Home.js';
+import NavBar from './NavBar/NavBar.js';
+import ProductWindow from './Product/ProductWindow.js';
 // import SideBar from './components/SideBar/SideBar';
-import ProductWindow from './components/Product/ProductWindow';
-import ProductCreate from './components/Product/ProductCreate.js';
-import ProductEdit from './components/Product/ProductEdit.js';
-import AboutUs from './components/SideBar/AboutUs';
-import ContactUs from './components/SideBar/ContactUs.js';
-import HelpPage from './components/SideBar/HelpPage.js';
-import Distance from './components/SideBar/Distance.js';
-import Category from './components/SideBar/Category.js';
-import Cart from './components/NavBar/Cart.js';
-import ProfilePage from './components/NavBar/ProfilePage.js';
-import ProductById from './components/Product/ProductById.js'
-import ProfileCreate from './components/Profile/ProfileCreate.js';
-import SearchResults from './components/NavBar/SearchResults.js';
-import ProductCard from './components/Product/ProductCard.js';
+// import ProductCreate from './components/Product/ProductCreate.js';
+// import ProductEdit from './components/Product/ProductEdit.js';
+// import AboutUs from './components/SideBar/AboutUs';
+// import ContactUs from './components/SideBar/ContactUs.js';
+// import HelpPage from './components/SideBar/HelpPage.js';
+// import Distance from './components/SideBar/Distance.js';
+// import Category from './components/SideBar/Category.js';
+// import Cart from './components/NavBar/Cart.js';
+// import ProfilePage from './components/NavBar/ProfilePage.js';
+// import ProductById from './components/Product/ProductById.js'
+// import ProfileCreate from './components/Profile/ProfileCreate.js';
+// import SearchResults from './components/NavBar/SearchResults.js';
+// import ProductCard from './components/Product/ProductCard.js';
 
 function App() {
-  const [seeds, setSeeds] = useState(productsSeed)
+  // const [seeds, setSeeds] = useState(productsSeed)
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <NavBar />
-      </header>
-      <section>
+    <BrowserRouter>
+      <div className="App">
+        <header className="App-header">
+          <NavBar />
+        </header>
+        {/* <section>
         <nav>
-          
             <Link to="/products/create">Create Product</Link>
             <Link to="/profiles/create">Create a Profile</Link>
             <Link to="/AboutUs">About Us</Link>
             <Link to="/ContactUs">Contact Us</Link>
             <Link to="/HelpPage">Help Page</Link>
-        
           <Routes>
             <Route path="/products" element={<ProductWindow />} />
           </Routes>
         </nav>
-      </section>
-      <main>
-        <Routes>
-          <Route path="/" element={<ProductWindow seeds={seeds} />} />
+      </section> */}
+        <main>
+          <Container className='mt-3'>
+            <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/products/:id" element={<ProductWindow />} />
+            </Routes>
+          </Container>
+          {/* <Routes> */}
+          {/* <Route path="/" element={<ProductWindow seeds={seeds} />} />
           <Route path="/ProductCard" element={<ProductCard />} />
           <Route path="/" element={<ProductWindow seeds={seeds} />} />
           <Route path="ProductWindow" element={<ProductWindow />} />
@@ -62,15 +65,16 @@ function App() {
           <Route path="/profiles/create" element={<ProfileCreate />} />
           <Route path="/search" element={<SearchResults />} />
           <Route path="/products/create" element={<ProductCreate />} />
-          <Route path="/products/edit/:id" element={<ProductEdit />} />
-        </Routes>
-      </main>
-      <footer>
+          <Route path="/products/edit/:id" element={<ProductEdit />} /> */}
+          {/* </Routes> */}
+        </main>
+        <footer>
           <div className="text-center">
             All rights reserved
           </div>
         </footer>
-    </div>
+      </div>
+    </BrowserRouter>
   );
 }
 

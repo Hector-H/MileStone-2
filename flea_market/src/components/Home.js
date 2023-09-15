@@ -2,8 +2,8 @@ import { useEffect, useReducer } from "react";
 import { Row, Col } from "react-bootstrap";
 import { Helmet } from "react-helmet-async";
 
-import ProductCard from "../components/ProductCard";
-import supabase from "../supabase";
+import ProductCard from "../Product/ProductCard";
+import supabase from "../supabaseClient";
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -19,7 +19,7 @@ const reducer = (state, action) => {
 }
 
 export default function Home() {
-    const [{ loading, error, products }, dispatch] = useReducer(reducer, {
+    const [{ products }, dispatch] = useReducer(reducer, {
         products: [],
         loading: false,
         error: ''
