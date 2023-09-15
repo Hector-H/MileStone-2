@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 export default function ContactUs() {
     return (
         <div className="Contact_Us">

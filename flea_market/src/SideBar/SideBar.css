@@ -1,8 +1,19 @@
 .SideBar{
-    display: inline-table;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 1px;
+    width: 10vw;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
     font-size: x-large;
     font-family: 'Times New Roman', Times, serif;
-    padding-inline: 10px;
-    position: fixed;
-    height: fit-content;
+    font-weight: 200;
+    font-style: oblique;
+    border: 5px black;
+}
+
+ul {
+    list-style: none;
+    text-decoration: none;
 }

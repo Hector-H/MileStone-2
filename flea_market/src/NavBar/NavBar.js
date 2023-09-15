@@ -5,20 +5,17 @@ import { LinkContainer } from "react-router-bootstrap";
 import SearchBar from "./SearchBar";
 import "./NavBar.css";
 
-export default function NavBar(props) {
+export default function NavBar() {
 
     return (
-        <div>
-            <Navbar bg="dark" variant="dark">
+        <div className="NavBar">
+            <Navbar>
                 <Container>
                     <LinkContainer to="/">
                         <Navbar.Brand>Flea Market</Navbar.Brand>
                     </LinkContainer>
                     <SearchBar />
                     <Nav className="me-auto">
-                        <Link to="/products" className="nav-link">
-                            Products
-                        </Link>
                         <Link to="/cart" className="nav-link">
                             Cart
                         </Link>

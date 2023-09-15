@@ -1,9 +1,10 @@
 import { useEffect, useReducer, useContext } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Badge, Button, Card, Col, ListGroup, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet-async";
-import supabase from "../supabaseClient";
 
+import supabase from "../supabaseClient";
+import Rating from "../Components/Rating";
 import "./Products.css"
 
 const reducer = (state, action) => {
@@ -28,11 +29,9 @@ export default function ProductWindow() {
     //         return prevProducts.filter(pd => pd.id !== id)
     //     })
     // }
-    const navigate = useNavigate()
-    const params = useParams()
     const { id } = useParams()
 
-    const [{ loading, error, product }, dispatch] = useReducer(reducer, {
+    const [{ product }, dispatch] = useReducer(reducer, {
         product: {},
         loading: false,
         error: ''
@@ -77,6 +76,12 @@ export default function ProductWindow() {
                         </ListGroup.Item>
                         <ListGroup.Item>
                             <h3>Price: ${product.price}</h3>
+                        </ListGroup.Item>
+                        <ListGroup.Item>
+                            <Rating 
+                                rating={product.rating}
+                                reviews={product.reviews}
+                            />
                         </ListGroup.Item>
                         <ListGroup.Item>
                             <h3>Category: {product.category}</h3>

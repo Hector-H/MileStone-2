@@ -6,11 +6,19 @@ import { Container } from "react-bootstrap";
 import Home from './Components/Home.js';
 import NavBar from './NavBar/NavBar.js';
 import ProductWindow from './Product/ProductWindow.js';
-// import SideBar from './components/SideBar/SideBar';
+
+// SideBar
+import SideBar from './SideBar/SideBar.js';
+import AboutUs from './SideBar/AboutUs.js';
+import ContactUs from './SideBar/ContactUs.js';
+import HelpPage from './SideBar/HelpPage.js';
+import Distance from './SideBar/Distance.js';
+import Category from './SideBar/Category.js';
+
+
 // import ProductCreate from './components/Product/ProductCreate.js';
 // import ProductEdit from './components/Product/ProductEdit.js';
 // import AboutUs from './components/SideBar/AboutUs';
-// import ContactUs from './components/SideBar/ContactUs.js';
 // import HelpPage from './components/SideBar/HelpPage.js';
 // import Distance from './components/SideBar/Distance.js';
 // import Category from './components/SideBar/Category.js';
@@ -27,35 +35,33 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <header className="App-header">
+        <header>
           <NavBar />
         </header>
-        {/* <section>
-        <nav>
-            <Link to="/products/create">Create Product</Link>
-            <Link to="/profiles/create">Create a Profile</Link>
-            <Link to="/AboutUs">About Us</Link>
-            <Link to="/ContactUs">Contact Us</Link>
-            <Link to="/HelpPage">Help Page</Link>
-          <Routes>
-            <Route path="/products" element={<ProductWindow />} />
-          </Routes>
-        </nav>
-      </section> */}
+        <section>
+          <SideBar />
+        </section>
         <main>
           <Container className='mt-3'>
             <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/products/:id" element={<ProductWindow />} />
+              <Route path="/" element={<Home />} />
+              <Route path="/products/:id" element={<ProductWindow />} />
+
+              {/* SideBar Routes */}
+              <Route path="/ContactUs" element={<ContactUs />} />
+              <Route path="/AboutUs" element={<AboutUs />} />
+              <Route path="/HelpPage" element={<HelpPage />} />
+              <Route path="/Distance" element={<Distance />} />
+              <Route path="/Category" element={<Category />} />
             </Routes>
           </Container>
           {/* <Routes> */}
           {/* <Route path="/" element={<ProductWindow seeds={seeds} />} />
+              <Route path="/ContactUs" element={<ContactUs />} />
+          <Route path="/AboutUs" element={<AboutUs />} />
           <Route path="/ProductCard" element={<ProductCard />} />
           <Route path="/" element={<ProductWindow seeds={seeds} />} />
           <Route path="ProductWindow" element={<ProductWindow />} />
-          <Route path="/AboutUs" element={<AboutUs />} />
-          <Route path="/ContactUs" element={<ContactUs />} />
           <Route path="/HelpPage" element={<HelpPage />} />
           <Route path="/Distance" element={<Distance />} />
           <Route path="/Category" element={<Category />} />
@@ -70,7 +76,7 @@ function App() {
         </main>
         <footer>
           <div className="text-center">
-            All rights reserved
+            All Rights Reserved. &copy; 2023
           </div>
         </footer>
       </div>
