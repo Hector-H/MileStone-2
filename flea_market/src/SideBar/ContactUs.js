@@ -4,9 +4,7 @@ import { Helmet } from 'react-helmet-async';
 export default function ContactUs() {
     return (
         <Container className="Contact_Us">
-            <Helmet>
-                <title>Contact Us</title>
-            </Helmet>
+            <Helmet title="Contact Us" />
             <h1>Contact Us:</h1>
             <Row>
                 <Col md={4}>

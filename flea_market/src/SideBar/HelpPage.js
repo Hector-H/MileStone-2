@@ -4,9 +4,7 @@ import { Helmet } from 'react-helmet-async';
 export default function HelpPage() {
     return (
         <Container className="HelpPage">
-            <Helmet>
-                <title>Help Page</title>
-            </Helmet>
+            <Helmet title="Help Page" />
             <Row>
                 <Col>
                     <h1>Help Page</h1>

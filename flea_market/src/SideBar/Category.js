@@ -43,9 +43,7 @@ export default function Category() {
 
     return (
         <div className="Category">
-            <Helmet>
-                <title>Categories</title>
-            </Helmet>
+            <Helmet title="Category" />
             <Row>
                 {products.map((product) => (
                     <Col

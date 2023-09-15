@@ -17,16 +17,15 @@ export default function ProductCreate() {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        if(!title || !details || !image) {
+        if (!title || !details || !image) {
             setFormError('Fill Required Fields')
-            return 
+            return
         }
         // console.log(title, details, price, category, image)
-        const { data, error} = await supabase
-        .from('products')
-        .insert([{ title, details, price, category, image}])
-        .select()
-
+        const { data, error } = await supabase
+            .from('products')
+            .insert([{ title, details, price, category, image }])
+            .select()
         if (error) {
             console.log(error)
             setFormError('Fill Required Fields')

@@ -5,9 +5,7 @@ import { Helmet } from 'react-helmet-async';
 export default function AboutUs() {
     return (
         <Container>
-            <Helmet>
-                <title>About Us</title>
-            </Helmet>
+            <Helmet title="About Us" />
             <Row>
                 <Col>
                     <h1>About Us</h1>

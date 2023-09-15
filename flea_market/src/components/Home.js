@@ -43,9 +43,7 @@ export default function Home() {
 
     return (
         <div>
-            <Helmet>
-                <title>Flea Market - Home</title>
-            </Helmet>
+            <Helmet title="Flea Market - Home" />
             <div className="products">
                 <h1>Products</h1>
                 <Row>

@@ -54,7 +54,6 @@ export default function ProductWindow() {
         fetchProduct()
     }, [id])
 
-
     return (
         <div>
             <Row>
@@ -69,7 +68,6 @@ export default function ProductWindow() {
                     <ListGroup variant="flush">
                         <ListGroup.Item>
                             <Helmet>
-                                {/* <title>Flea Market - {product.title}</title> */}
                                 <title>{product && product.title ? product.title : 'Product Details'}</title>
                             </Helmet>
                             <h2>{product.title}</h2>
