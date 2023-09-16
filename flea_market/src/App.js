@@ -7,6 +7,8 @@ import Home from './Components/Home.js';
 import NavBar from './NavBar/NavBar.js';
 import ProductWindow from './Product/ProductWindow.js';
 import SearchResults from './Components/SearchResults.js';
+import Cart from './NavBar/Cart.js';
+import ProfilePage from './NavBar/ProfilePage.js';
 
 // SideBar
 import SideBar from './SideBar/SideBar.js';
@@ -19,6 +21,7 @@ import Category from './SideBar/Category.js';
 //CRUD Routes
 import ProductCreate from './Product/ProductCreate.js';
 import ProductEdit from './Product/ProductEdit.js';
+import ProfileCreate from './Profile/ProfileCreate.js';
 
 // import Cart from './components/NavBar/Cart.js';
 // import ProfilePage from './components/NavBar/ProfilePage.js';
@@ -42,6 +45,8 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/products/:id" element={<ProductWindow />} />
               <Route path="/search" element={<SearchResults />} />
+              <Route path="/Cart" element={<Cart />} />
+              <Route path="/ProfilePage" element={<ProfilePage />} />
 
               {/* SideBar Routes */}
               <Route path="/ContactUs" element={<ContactUs />} />
@@ -53,25 +58,12 @@ function App() {
               {/* CRUD Routes */}
               <Route path="/ProductCreate" element={<ProductCreate />} />
               <Route path="/ProductEdit/:id" element={<ProductEdit />} />
+              <Route path="/ProfileCreate" element={<ProfileCreate />} />
+
+              {/* Profile Routes */}
             </Routes>
           </Container>
-          {/* <Routes>
-              <Route path="/ContactUs" element={<ContactUs />} />
-          <Route path="/AboutUs" element={<AboutUs />} />
-          <Route path="/ProductCard" element={<ProductCard />} />
-          <Route path="/" element={<ProductWindow seeds={seeds} />} />
-          <Route path="ProductWindow" element={<ProductWindow />} />
-          <Route path="/HelpPage" element={<HelpPage />} />
-          <Route path="/Distance" element={<Distance />} />
-          <Route path="/Category" element={<Category />} />
-          <Route path="/Cart" element={<Cart />} />
-          <Route path="/ProfilePage" element={<ProfilePage />} />
-          <Route path="/products/:id" element={<ProductById />} />
-          <Route path="/profiles/create" element={<ProfileCreate />} />
-          <Route path="/search" element={<SearchResults />} />
-          <Route path="/products/create" element={<ProductCreate />} />
-          <Route path="/products/edit/:id" element={<ProductEdit />} />
-        </Routes> */}
+          {/* <Route path="/profiles/create" element={<ProfileCreate />} /> */}
         </main>
         <footer className="footer">
           <div className="text-center">

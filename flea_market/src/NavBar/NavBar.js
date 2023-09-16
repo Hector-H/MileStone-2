@@ -17,10 +17,10 @@ export default function NavBar() {
                     <SearchBar placeholder="Enter a Product"/>
                     {/* <SearchBar /> */}
                     <Nav className="me-auto">
-                        <Link to="/cart" className="nav-link">
+                        <Link to="/Cart" className="nav-link">
                             Cart
                         </Link>
-                        <Link to="/profile" className="nav-link">
+                        <Link to="/ProfilePage" className="nav-link">
                             Profile
                         </Link>
                     </Nav>

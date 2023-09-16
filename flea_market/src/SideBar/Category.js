@@ -45,9 +45,9 @@ export default function Category() {
         <div className="Category">
             <Helmet title="Category" />
             <Row>
-                {products.map((product) => (
+                {products.map((product, id) => (
                     <Col
-                        key={products.id}
+                        key={id}
                         className="mb-3"
                         sm={6}
                         md={5}
