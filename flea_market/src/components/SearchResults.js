@@ -1,55 +1,64 @@
-import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
-import supabase from "../supabaseClient";
+import React, { useEffect, useReducer } from 'react';
+import supabase from '../supabaseClient';
 
+const reducer = (state, action) => {
+    switch (action.type) {
+        case 'FETCH_REQUEST':
+            return { ...state, loading: true, error: '' };
+        case 'FETCH_SUCCESS':
+            return { ...state, products: action.payload, loading: false, error: '' };
+        case 'FETCH_FAIL':
+            return { ...state, loading: false, error: action.payload };
+        default:
+            return state;
+    }
+};
 
 export default function SearchResults(props) {
-    const [search, setSearch] = useState("");
-    const [data, setData] = useState([]);
+    const [{ products }, dispatch] = useReducer(reducer, {
+        products: [],
+        loading: false,
+        error: '',
+    });
 
-    // Search for products by any word 
     useEffect(() => {
         const fetchProducts = async () => {
-            const { data } = await supabase
-                .from("products")
-                .select("*")
-            setData(data);
+            dispatch({ type: 'FETCH_REQUEST' });
+
+            // Fetch products based on the search query
+            const { data, error } = await supabase
+                .from('products')
+                .select()
+                .ilike('product_name', `%${props.search}%`); // Adjust the column name as needed
+
+            if (error) {
+                dispatch({ type: 'FETCH_FAIL', payload: error.message });
+            }
+
+            if (data) {
+                dispatch({ type: 'FETCH_SUCCESS', payload: data });
+            }
         };
+
         fetchProducts();
-    }, [])
-        
-    const handleSearch = (e, term) => {
-        e.preventDefault();
-        setSearch(term);
-    }
+    }, [props.search]);
 
     return (
-        <div>
-            <form onSubmit={(e) => props.searchProducts(e, search)}>
-                <input
-                    type="text"
-                    placeholder="Search for a product"
-                    onChange={(e) => handleSearch(e)}
-                />
-                <button type="submit">Search</button>
-            </form>
-            <div>
-                {data.map((product) => {
-                    if (product.title.toLowerCase().includes(search.toLowerCase())) {
-                        return (
-                            <div>
-                                <Link to={`/products/${product.id}`}>
-                                    <h3>{product.title}</h3>
-                                </Link>
-                                <p>{product.description}</p>
-                                <p>{product.price}</p>
-                                <p>{product.category}</p>
-                            </div>
-                        )
-                    }
-                })}
-                
-            </div>
+        <div className="SearchResults">
+            <h1>Search Results</h1>
+            {products.length === 0 ? (
+                <p>No results found.</p>
+            ) : (
+                <ul>
+                    {products.map((product) => (
+                        <li key={product.id}>
+                            {/* Display product information here */}
+                            <p>{product.product_name}</p>
+                            {/* Add more fields as needed */}
+                        </li>
+                    ))}
+                </ul>
+            )}
         </div>
-    )
+    );
 }

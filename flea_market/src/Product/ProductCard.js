@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom'
 import { Card } from 'react-bootstrap';
 
 const ProductCard = ({ product }) => {
-
     return (
         <Card>
             <Link to={`/products/${product.id}`}>{product.title}
@@ -14,5 +13,4 @@ const ProductCard = ({ product }) => {
         </Card>
     )
     }
-
     export default ProductCard

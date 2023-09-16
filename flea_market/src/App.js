@@ -6,6 +6,7 @@ import { Container } from "react-bootstrap";
 import Home from './Components/Home.js';
 import NavBar from './NavBar/NavBar.js';
 import ProductWindow from './Product/ProductWindow.js';
+import SearchResults from './Components/SearchResults.js';
 
 // SideBar
 import SideBar from './SideBar/SideBar.js';
@@ -40,6 +41,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/products/:id" element={<ProductWindow />} />
+              <Route path="/search" element={<SearchResults />} />
 
               {/* SideBar Routes */}
               <Route path="/ContactUs" element={<ContactUs />} />
@@ -53,8 +55,7 @@ function App() {
               <Route path="/ProductEdit/:id" element={<ProductEdit />} />
             </Routes>
           </Container>
-          {/* <Routes> */}
-          {/* <Route path="/" element={<ProductWindow seeds={seeds} />} />
+          {/* <Routes>
               <Route path="/ContactUs" element={<ContactUs />} />
           <Route path="/AboutUs" element={<AboutUs />} />
           <Route path="/ProductCard" element={<ProductCard />} />
@@ -69,8 +70,8 @@ function App() {
           <Route path="/profiles/create" element={<ProfileCreate />} />
           <Route path="/search" element={<SearchResults />} />
           <Route path="/products/create" element={<ProductCreate />} />
-          <Route path="/products/edit/:id" element={<ProductEdit />} /> */}
-          {/* </Routes> */}
+          <Route path="/products/edit/:id" element={<ProductEdit />} />
+        </Routes> */}
         </main>
         <footer className="footer">
           <div className="text-center">

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { Container, Navbar, Nav } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 
-import SearchBar from "./SearchBar";
+import SearchBar from "../Components/SearchBar";
 import "./NavBar.css";
 
 export default function NavBar() {
@@ -14,7 +14,8 @@ export default function NavBar() {
                     <LinkContainer to="/">
                         <Navbar.Brand>Flea Market</Navbar.Brand>
                     </LinkContainer>
-                    <SearchBar />
+                    <SearchBar placeholder="Enter a Product"/>
+                    {/* <SearchBar /> */}
                     <Nav className="me-auto">
                         <Link to="/cart" className="nav-link">
                             Cart

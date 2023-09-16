@@ -4,7 +4,6 @@ import { Col, ListGroup, Row, Button } from "react-bootstrap";
 import { Helmet } from "react-helmet-async";
 
 import supabase from "../supabaseClient";
-import ProductEdit from "./ProductEdit";
 import Rating from "../Components/Rating";
 import "./Products.css"
 
